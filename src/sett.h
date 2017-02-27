@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "infra.h"
 
 /*
  * Struct representing a settlement.
@@ -14,15 +15,45 @@ int SETTLEMENT_AGE;
 
 typedef struct sett {
     int pop;
-    char[] region;
-    market mrkt;
-    infras infras;
+    enum region sett_reg;
+    struct district* districts;
 } sett;
 
-typedef struct market {
-    
-} market;
+enum region {
+    ICECAP,
+    TUNDRA,
+    BOREAL,
+    HEMIBOREAL,
+    COAST,
+    SWAMP,
+    JUNGLE,
+    STEPPE,
+    DESERT
+};
 
-typedef struct infrastructures {
+typedef struct district {
+    int pop;
+    struct infrastructure* buildings;
+} district;
 
-} infras;
+typedef struct infrastructure {
+    enum condition;
+} infra;
+
+typedef struct commodity {
+    int num;
+    enum resource_t name;
+}
+
+enum resource_t {
+    IRON,
+    SILVER,
+    CATTLE,
+    FISH,
+    LUMBER,
+    PAINT,
+    MARBLE,
+    TEA,
+    BEER,
+    WINE
+};
