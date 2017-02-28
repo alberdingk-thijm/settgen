@@ -11,73 +11,75 @@ enum condition {
     RUINED
 };
 
-enum district_type {
+enum type {
     TECHNICAL,
     COMMERCIAL,
+    NAUTICAL,
     INDUSTRIAL,
     RELIGIOUS,
     MILITARY,
-    ADMINISTATIVE
+    ADMINISTRATIVE
 }
 
 enum technical {
     LIBRARY,
+    THEATRE,
     SCHOOL,
     UNIVERSITY,
-    MUSEUM,
-    THEATRE
+    MUSEUM
 };
 
 enum commercial {
-    MINT,
     MARKET,
-    FAIR,
+    INN,
     CARAVANSARY,
-    CUSTOMS_HOUSE,
-    HARBOUR,
+    MINT,
+    CUSTOMS_HOUSE
+};
+
+enum nautical {
     LIGHTHOUSE,
+    HARBOUR,
     WAREHOUSE,
-    INN
+    SHIPYARD
 };
 
 enum industrial {
-    MANUFACTORY,
-    WORKSHOP,
-    FOUNDRY,
-    FORGE,
     MILL,
-    BREWERY,
     STABLE,
+    FORGE,
+    WORKSHOP,
+    MANUFACTORY,
     GUILD_HALL
 };
 
 enum religious {
     SHRINE,
     TEMPLE,
-    GRAND_TEMPLE,
-    GARDEN
+    GARDEN,
+    GRAND_TEMPLE
 };
 
 enum military {
     WALLS,
-    FORTRESS,
     BARRACKS,
-    ARMOURY
+    ARMOURY,
+    FORTRESS
 };
 
 enum administrative {
     MONUMENT,
-    COURTHOUSE,
-    PRISON,
     ASSEMBLY,
-    EMBASSY
+    PRISON,
+    EMBASSY,
+    COURTHOUSE
 };
 
 enum health {
     WELL,
-    AQUEDUCT,
     APOTHECARY,
+    AQUEDUCT,
     SEWERAGE,
-    HOSPITAL,
-    QUARANTINE
+    QUARANTINE,
+    HOSPITAL
 };

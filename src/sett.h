@@ -1,20 +1,19 @@
 #include <stdlib.h>
 #include "infra.h"
+#include "events.h"
 
 /*
  * Struct representing a settlement.
  * Highest-level storage of state.
  * Relevant info:
  *  - population
+ *  - age
  *  - region type
- *  - elements in market
- *  - infrastructure
+ *  - districts
  */
-
-int SETTLEMENT_AGE;
-
 typedef struct sett {
     int pop;
+    int age;
     enum region sett_reg;
     struct district* districts;
 } sett;
@@ -43,29 +42,18 @@ enum region {
 
 typedef struct district {
     int pop;
-    enum race race;
-    enum dist_type type;
+    int age;
+    enum race r;
+    enum type t;
     struct infrastructure* buildings;
 } district;
 
 typedef struct infrastructure {
-    enum condition;
+    char* name;
+    enum condition;  // infrastructure condition
+    enum type t;  // infrastructure type
+    struct* event ev;  // associated events
 } infra;
 
-typedef struct commodity {
-    int num;
-    enum resource_t name;
-}
+static void execute_timestep(sett* s);
 
-enum resource_t {
-    IRON,
-    SILVER,
-    CATTLE,
-    FISH,
-    LUMBER,
-    PAINT,
-    MARBLE,
-    TEA,
-    BEER,
-    WINE
-};
