@@ -3,12 +3,22 @@
  */
 
 enum condition {
+    IN_PROGRESS,
     NEW,
     FINE,
     OLD,
     DERELICT,
     RUINED
 };
+
+enum district_type {
+    TECHNICAL,
+    COMMERCIAL,
+    INDUSTRIAL,
+    RELIGIOUS,
+    MILITARY,
+    ADMINISTATIVE
+}
 
 enum technical {
     LIBRARY,
@@ -18,7 +28,7 @@ enum technical {
     THEATRE
 };
 
-enum trade {
+enum commercial {
     MINT,
     MARKET,
     FAIR,
@@ -30,30 +40,32 @@ enum trade {
     INN
 };
 
-enum industry {
+enum industrial {
     MANUFACTORY,
     WORKSHOP,
     FOUNDRY,
     FORGE,
     MILL,
+    BREWERY,
+    STABLE,
     GUILD_HALL
 };
 
-enum religion {
+enum religious {
     SHRINE,
     TEMPLE,
     GRAND_TEMPLE,
-    MONASTERY
+    GARDEN
 };
 
 enum military {
     WALLS,
-    FORT,
+    FORTRESS,
     BARRACKS,
     ARMOURY
 };
 
-enum administration {
+enum administrative {
     MONUMENT,
     COURTHOUSE,
     PRISON,
@@ -61,17 +73,11 @@ enum administration {
     EMBASSY
 };
 
-enum agriculture {
-    STABLE,
-    BAKERY,
-    BREWERY,
-    WINERY,
-    GARDEN
-}
-
 enum health {
     WELL,
+    AQUEDUCT,
+    APOTHECARY,
+    SEWERAGE,
     HOSPITAL,
-    QUARANTINE,
-    LEPER_COLONY,
+    QUARANTINE
 };

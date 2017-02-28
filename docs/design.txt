@@ -1,0 +1,9 @@
+Settlement:
+    array of districts
+    for each district:
+        generate district flavour
+        generate district infrastructure
+
+District:
+start at low pop, grow each year and increase infrastructure progress
+each year, check for events

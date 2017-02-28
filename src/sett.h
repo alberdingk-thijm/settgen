@@ -19,6 +19,16 @@ typedef struct sett {
     struct district* districts;
 } sett;
 
+enum race {
+    HUMAN,
+    ELF,
+    DWARF,
+    GNOME,
+    HALFELF,
+    HALFORC,
+    HALFLING
+};
+
 enum region {
     ICECAP,
     TUNDRA,
@@ -33,6 +43,8 @@ enum region {
 
 typedef struct district {
     int pop;
+    enum race race;
+    enum dist_type type;
     struct infrastructure* buildings;
 } district;
 
