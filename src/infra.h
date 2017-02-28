@@ -3,12 +3,12 @@
  */
 
 enum condition {
-    IN_PROGRESS,
-    NEW,
-    FINE,
-    OLD,
-    DERELICT,
-    RUINED
+    IN_PROGRESS = -1,
+    NEW = 0,
+    FINE = 1,
+    OLD = 2,
+    DERELICT = 3,
+    RUINED = 4
 };
 
 enum type {
