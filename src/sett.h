@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "infra.h"
 #include "events.h"
+#include "people.h"
 
 /*
  * Struct representing a settlement.
@@ -16,17 +17,8 @@ typedef struct sett {
     int age;
     enum region sett_reg;
     struct district* districts;
+    struct notable* notables;
 } sett;
-
-enum race {
-    HUMAN,
-    ELF,
-    DWARF,
-    GNOME,
-    HALFELF,
-    HALFORC,
-    HALFLING
-};
 
 enum region {
     ICECAP,
