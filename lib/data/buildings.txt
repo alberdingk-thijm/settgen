@@ -1,0 +1,132 @@
+# buildings file
+# format:
+# [building_name type]
+# building_[e]vent1 %roll_effect
+# building_event2 %roll_effect
+# ...
+# building_eventN %roll_effect
+# \n
+# square brackets around a character indicates that it is the
+# reference character for the event
+
+[LIBRARY TECHNICAL]
+rare[B]ook +10
+
+[SCHOOL TECHNICAL]
+rare[B]ook +5
+[l]ecture +10
+[W]izard +5
+
+[UNIVERSITY TECHNICAL]
+rare[B]ook +10
+[l]ecture +10
+[W]izard +10
+strike +2
+[A]rtifact +1
+
+[OBSERVATORY TECHNICAL]
+rare[B]ook +5
+[W]izard +5
+celestialevent +10
+
+[THEATRE TECHNICAL]
+rare[B]ook +5
+performance +10
+festival +3
+
+[MUSEUM TECHNICAL]
+rare[B]ook +10
+[l]ecture +10
+[A]rtifact +3
+master[w]ork +5
+
+[MARKET COMMERCIAL]
+[M]erchant +10
+fair +5
+
+[INN COMMERCIAL]
+[M]erchant +10
+chef +5
+
+[CARAVANSARY COMMERCIAL]
+[M]erchant +5
+fair +5
+
+[MINT COMMERCIAL]
+[M]erchant +5
+tax +5
+
+[CUSTOMS_HOUSE COMMERCIAL]
+[M]erchant +10
+tax +5
+embargo +3
+
+[LIGHTHOUSE NAUTICAL]
+shipwreck -5
+piracy +5
+
+[HARBOUR NAUTICAL]
+shipwreck -5
+piracy +5
+plague +5
+embargo +3
+[M]erchant +10
+
+[WAREHOUSE NAUTICAL]
+plague +5
+piracy +5
+[M]erchant +10
+
+#[SHIPYARD NAUTICAL]
+
+#[MILL INDUSTRIAL]
+
+#[STABLE INDUSTRIAL]
+
+#[GUILD_HALL INDUSTRIAL]
+
+[SHRINE RELIGIOUS]
+heresy +10
+revelation +5
+observance +5
+
+[TEMPLE RELIGIOUS]
+heresy +5
+revelation +5
+observance +5
+
+[GARDEN RELIGIOUS]
+revelation +5
+
+[GRAND_TEMPLE RELIGIOUS]
+heresy -5
+revelation +5
+observance +10
+
+[WALLS MILITARY]
+skirmish +5
+
+[BARRACKS MILITARY]
+skirmish +10
+
+[ARMOURY MILITARY]
+skirmish +10
+[A]rtifact +1
+
+[FORTRESS MILITARY]
+skirmish +10
+[A]rtifact +2
+triumph +5
+
+[MONUMENT ADMINISTRATIVE]
+master[w]ork +1
+
+[ASSEMBLY ADMINISTRATIVE]
+trial +5
+
+[PRISON ADMINISTRATIVE]
+trial +5
+prisonbreak +2
+
+[EMBASSY ADMINISTRATIVE]
+diplomat +5

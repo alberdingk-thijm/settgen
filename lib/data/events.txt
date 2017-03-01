@@ -1,0 +1,7 @@
+# events file
+# format:
+# [event_name]
+# event_effect_description
+# population_modifier
+# chance
+# event_function

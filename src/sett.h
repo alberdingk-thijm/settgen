@@ -50,9 +50,10 @@ typedef struct district {
 
 typedef struct infrastructure {
     char* name;
+    struct district* home;  // location in sett
     enum condition;  // infrastructure condition
     enum type t;  // infrastructure type
-    struct* event ev;  // associated events
+    struct event* ev;  // associated events
 } infra;
 
 static void execute_timestep(sett* s);

@@ -83,3 +83,8 @@ enum health {
     QUARANTINE,
     HOSPITAL
 };
+
+
+
+static void load_buildings(char* fpath);
+
