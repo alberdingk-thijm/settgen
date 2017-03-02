@@ -6,9 +6,27 @@ typedef struct event {
     int pop_mod;
     float chance;
     eventf f;
+    struct event* next;
 } event;
 
 static eventf parse_event(char* eventname);
+
+// kill % of population
+static int event_kill(infra* i, float chance);
+// damage building (reduce condition)
+static int event_damage(infra* i, float chance);
+// halt building and growth
+static int event_anger(infra* i, float chance);
+// increase build speed by %
+static int event_build(infra* i, float chance);
+// increase growth speed by %
+static int event_grow(infra* i, float chance);
+// add notable
+static int event_notable(infra* i, float chance);
+// add item
+static int event_item(infra* i, float chance);
+// add flavour
+static int event_lore(infra* i, float chance);
 
 /*
  * General events

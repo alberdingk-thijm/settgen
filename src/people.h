@@ -3,13 +3,14 @@
 typedef struct notable {
     char* name;
     int level;
-    enum cls c;
+    cls c;
     int age;
-    enum race r;
+    race r;
     // flags?
+    struct notable* next;
 } notable;
 
-enum cls {
+typedef enum cls {
     CLERIC,
     DRUID,
     FIGHTER,
@@ -21,9 +22,9 @@ enum cls {
     ILLUSIONIST,
     MONK,
     BARD
-}
+} cls;
 
-enum race {
+typedef enum race {
     HUMAN,
     ELF,
     DWARF,
@@ -31,5 +32,7 @@ enum race {
     HALFELF,
     HALFORC,
     HALFLING
-};
+} race;
 
+static int notable_kill(notable* tokill);
+static int notable_create(char* name, int lvl, enum race r, enum cls c);

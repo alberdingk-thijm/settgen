@@ -1,7 +1,157 @@
 # events file
 # format:
 # [event_name]
-# event_effect_description
-# population_modifier
-# chance
-# event_function
+# desc:general description of event in history
+# chance:base chance of event occurring
+# event:event function to perform
+# eventc:chance table for event function
+
+# event functions   event chance
+# kill - k          KILL
+# damage - d        DAM
+# anger - a         RIOT
+# build - b         BLD
+# grow - g          GROW
+# notable - n       HERO
+# item - i          (N/A)
+# lore - l          (N/A)
+
+### GENERAL EVENTS ###
+
+[FIRE]
+desc:%s has erupted into flames!
+chance:3
+event:k
+eventc:KILL_VIRAL
+event:d
+eventc:DAM_VIRAL
+
+[ACCIDENT]
+desc:there has been an accident at %s
+chance:3
+event:k
+eventc:KILL_1
+event:d
+eventc:DAM_1
+
+[BREAKTHROUGH]
+desc:%s is celebrating a breakthrough
+chance:3
+event:b
+eventc:BLD_1
+event:g
+eventc:GROW_1
+
+[INVESTMENT]
+desc:%s received a welcome investment
+chance:3
+event:b
+eventc:BLD_2
+
+### TECHNICAL EVENTS ###
+
+[RARE_BOOK]
+desc:%s has acquired a rare book
+chance:0
+event:i
+
+[LECTURE]
+desc:a lecture was held at %s
+chance:0
+event:a
+eventc:RIOT_1
+
+[WIZARD]
+desc:a powerful wizard has arrived at %s
+chance:0
+event:n
+eventc:HERO_MAGE
+
+[CELESTIAL_EVENT]
+desc:%s observed an incredible celestial event!
+chance:0
+event:r
+eventc:RIOT_2
+
+[STRIKE]
+desc:members of %s are striking
+chance:0
+event:k
+eventc:RIOT_3
+event:d
+eventc:DAM_1
+
+[ARTIFACT]
+desc:a precious artifact has arrived at %s
+chance:0
+event:i
+
+[MASTERWORK]
+desc:%s has received a beautiful masterwork
+chance:0
+event:i
+
+[MERCHANT]
+desc:a rich merchant has arrived at %s
+chance:0
+event:n
+eventc:HERO_MERCH
+
+[FAIR]
+desc:a fair has been set up near %s
+chance:0
+event:g
+eventc:GROW_1
+
+[TAX]
+desc:%s has established a new tax
+chance:0
+event:a
+eventc:RIOT_1
+event:b
+eventc:BLD_1
+
+[EMBARGO]
+desc:an embargo was established by %s
+chance:0
+event:a
+eventc:RIOT_2
+
+[SHIPWRECK]
+desc:a ship was wrecked near %s
+chance:3
+event:a
+eventc:RIOT_1
+
+[PIRACY]
+desc:pirates have been harassing ships!
+chance:0
+event:a
+eventc:RIOT_1
+event:n
+eventc:HERO_THIEF
+
+[PLAGUE]
+desc:a terrible plague has claimed us!
+chance:1
+event:k
+eventc:KILL_VIRAL
+event:a
+eventc:RIOT_3
+
+[HERESY]
+desc:%s has uncovered heretics
+chance:0
+event:a
+eventc:RIOT_2
+
+[REVELATION]
+desc:a visitor to %s experienced a revelation!
+chance:0
+event:g
+eventc:GROW_1
+event:n
+eventc:HERO_CLERIC
+
+[OBSERVANCE]
+desc:

@@ -19,7 +19,7 @@ enum type {
     RELIGIOUS,
     MILITARY,
     ADMINISTRATIVE
-}
+};
 
 enum technical {
     LIBRARY,

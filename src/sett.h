@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "infra.h"
 #include "events.h"
 #include "people.h"
@@ -35,7 +34,7 @@ enum region {
 typedef struct district {
     int pop;
     int age;
-    enum race r;
+    race r;
     enum type t;
     struct infrastructure* buildings;
 } district;
