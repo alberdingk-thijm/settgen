@@ -1,132 +1,251 @@
 # buildings file
 # format:
-# [building_name type]
-# building_[e]vent1 %roll_effect
-# building_event2 %roll_effect
-# ...
-# building_eventN %roll_effect
-# \n
-# square brackets around a character indicates that it is the
+# name:name of building
+# type:type of building
+# event:event to perform (see events.txt)
+# eventc:% change of event occurring
 # reference character for the event
 
-[LIBRARY TECHNICAL]
-rare[B]ook +10
+name:LIBRARY
+type:TECHNICAL
+event:RARE_BOOK
+eventc:3
+event:BREAKTHROUGH
+eventc:1
 
-[SCHOOL TECHNICAL]
-rare[B]ook +5
-[l]ecture +10
-[W]izard +5
+name:SCHOOL
+type:TECHNICAL
+event:RARE_BOOK
+eventc:3
+event:LECTURE
+eventc:2
+event:WIZARD
+eventc:1
 
-[UNIVERSITY TECHNICAL]
-rare[B]ook +10
-[l]ecture +10
-[W]izard +10
-strike +2
-[A]rtifact +1
+name:UNIVERSITY
+type:TECHNICAL
+event:RARE_BOOK
+eventc:4
+event:LECTURE
+eventc:4
+event:BREAKTHROUGH
+eventc:1
+event:WIZARD
+eventc:2
+event:STRIKE
+eventc:1
+event:ARTIFACT
+eventc:1
 
-[OBSERVATORY TECHNICAL]
-rare[B]ook +5
-[W]izard +5
-celestialevent +10
+name:OBSERVATORY
+type:TECHNICAL
+event:RAREBOOK
+eventc:3
+event:WIZARD
+eventc:2
+event:CELESTIAL_EVENT
+eventc:1
 
-[THEATRE TECHNICAL]
-rare[B]ook +5
-performance +10
-festival +3
+name:THEATRE
+type:TECHNICAL
+event:RARE_BOOK
+eventc:3
+event:PERFORMANCE
+eventc:5
 
-[MUSEUM TECHNICAL]
-rare[B]ook +10
-[l]ecture +10
-[A]rtifact +3
-master[w]ork +5
+name:MUSEUM
+type:TECHNICAL
+event:RARE_BOOK
+eventc:4
+event:LECTURE
+eventc:3
+event:ARTIFACT
+eventc:1
+event:MASTERWORK
+eventc:1
 
-[MARKET COMMERCIAL]
-[M]erchant +10
-fair +5
+name:MARKET
+type:COMMERCIAL
+event:MERCHANT
+eventc:2
+event:FAIR
+eventc:1
 
-[INN COMMERCIAL]
-[M]erchant +10
-chef +5
+name:INN
+type:COMMERCIAL
+event:MERCHANT
+eventc:2
+event:INVESTMENT
+eventc:1
 
-[CARAVANSARY COMMERCIAL]
-[M]erchant +5
-fair +5
+name:CARAVANSARY
+type:COMMERCIAL
+event:MERCHANT
+eventc:1
+event:FAIR
+eventc:1
 
-[MINT COMMERCIAL]
-[M]erchant +5
-tax +5
+name:MINT
+type:COMMERCIAL
+event:MERCHANT
+eventc:1
+event:TAX
+eventc:3
 
-[CUSTOMS_HOUSE COMMERCIAL]
-[M]erchant +10
-tax +5
-embargo +3
+name:CUSTOMS_HOUSE
+type:COMMERCIAL
+event:MERCHANT
+eventc:2
+event:TAX
+eventc:3
+event:EMBARGO
+eventc:2
+event:INVESTMENT
+eventc:1
 
-[LIGHTHOUSE NAUTICAL]
-shipwreck -5
-piracy +5
+name:LIGHTHOUSE
+type:NAUTICAL
+event:SHIPWRECK
+eventc:-1
+event:PIRACY
+eventc:2
 
-[HARBOUR NAUTICAL]
-shipwreck -5
-piracy +5
-plague +5
-embargo +3
-[M]erchant +10
+name:HARBOUR
+type:NAUTICAL
+event:SHIPWRECK
+eventc:-1
+event:PIRACY
+eventc:2
+event:PLAGUE
+eventc:2
+event:EMBARGO
+eventc:1
+event:MERCHANT
+eventc:2
 
-[WAREHOUSE NAUTICAL]
-plague +5
-piracy +5
-[M]erchant +10
+name:WAREHOUSE
+type:NAUTICAL
+event:PLAGUE
+eventc:1
+event:PIRACY
+eventc:1
+event:MERCHANT
+eventc:1
 
-#[SHIPYARD NAUTICAL]
+name:SHIPYARD
+type:NAUTICAL
+event:EMBARGO
+eventc:1
+event:SKIRMISH
+eventc:1
 
-#[MILL INDUSTRIAL]
+name:MILL
+type:INDUSTRIAL
 
-#[STABLE INDUSTRIAL]
+name:STABLE
+type:INDUSTRIAL
+event:INVESTMENT
+eventc:1
 
-#[GUILD_HALL INDUSTRIAL]
+name:FORGE
+type:INDUSTRIAL
+event:BREAKTHROUGH
+eventc:2
+event:FIRE
+eventc:2
 
-[SHRINE RELIGIOUS]
-heresy +10
-revelation +5
-observance +5
+name:GUILD_HALL
+type:INDUSTRIAL
+event:BREAKTHROUGH
+eventc:1
+event:INVESTMENT
+eventc:1
 
-[TEMPLE RELIGIOUS]
-heresy +5
-revelation +5
-observance +5
+name:SHRINE
+type:RELIGIOUS
+event:HERESY
+eventc:2
+event:REVELATION
+eventc:1
+event:OBSERVANCE
+eventc:1
 
-[GARDEN RELIGIOUS]
-revelation +5
+name:TEMPLE
+type:RELIGIOUS
+event:HERESY
+eventc:1
+event:REVELATION
+eventc:2
+event:OBSERVANCE
+eventc:1
 
-[GRAND_TEMPLE RELIGIOUS]
-heresy -5
-revelation +5
-observance +10
+name:GARDEN
+type:RELIGIOUS
+event:REVELATION
+eventc:3
 
-[WALLS MILITARY]
-skirmish +5
+name:GRAND_TEMPLE
+type:RELIGIOUS
+event:HERESY
+eventc:-1
+event:REVELATION
+eventc:1
+event:OBSERVANCE
+eventc:2
 
-[BARRACKS MILITARY]
-skirmish +10
+name:WALLS
+type:MILITARY
+event:SKIRMISH
+eventc:1
 
-[ARMOURY MILITARY]
-skirmish +10
-[A]rtifact +1
+name:BARRACKS
+type:MILITARY
+event:SKIRMISH
+eventc:2
 
-[FORTRESS MILITARY]
-skirmish +10
-[A]rtifact +2
-triumph +5
+name:ARMOURY
+type:MILITARY
+event:SKIRMISH
+eventc:2
+event:ARTIFACT
+eventc:1
 
-[MONUMENT ADMINISTRATIVE]
-master[w]ork +1
+name:FORTRESS
+type:MILITARY
+event:SKIRMISH
+eventc:2
+event:ARTIFACT
+eventc:1
+event:TRIUMPH
+eventc:1
 
-[ASSEMBLY ADMINISTRATIVE]
-trial +5
+name:MONUMENT
+type:ADMINISTRATIVE
+event:MASTERWORK
+eventc:1
 
-[PRISON ADMINISTRATIVE]
-trial +5
-prisonbreak +2
+name:ASSEMBLY
+type:ADMINISTRATIVE
+event:TRIAL
+eventc:1
 
-[EMBASSY ADMINISTRATIVE]
-diplomat +5
+name:PRISON
+type:ADMINISTRATIVE
+event:TRIAL
+eventc:1
+event:PRISON_BREAK
+eventc:1
+
+name:EMBASSY
+type:ADMINISTRATIVE
+event:DIPLOMAT
+eventc:2
+
+name:PALACE
+type:ADMINISTRATIVE
+event:INVESTMENT
+eventc:2
+event:DIPLOMAT
+eventc:2
+event:MASTERWORK
+eventc:1
