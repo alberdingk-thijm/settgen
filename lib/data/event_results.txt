@@ -1,0 +1,101 @@
+# event results file
+# format:
+# id:event results id
+# roll:dice roll of random options
+
+# KILL event
+# effects determine upper % killed 
+
+# e.g. accident, skirmish; affects max one district
+id:KILL_1
+roll:1d10
+
+# e.g. fire, plague; can affect whole settlement
+id:KILL_2
+roll:1d10+5
+
+# DAM event
+# effects determine upper % of building destruction
+
+# e.g. accident, strike; affect max one infra
+id:DAM_1
+roll:1d10
+
+# e.g. fire, occupation
+id:DAM_2
+roll:1d10+5
+
+# RIOT event
+# effects determine how much is halted for how long
+
+# e.g. lecture, trial
+id:RIOT_1
+roll:1d8
+
+# e.g. celestial event, embargo
+id:RIOT_2
+roll:1d8+3
+
+# e.g. strike, plague
+id:RIOT_3
+roll:1d8+6
+
+# BLD event
+# effects determine upper % of build speed increase
+
+# e.g. breakthrough, tax
+id:BLD_1
+roll:1d10
+
+# e.g. investment, diplomat
+id:BLD_2
+roll:1d10+5
+
+# GROW event
+# effects determine upper % of pop growth increase
+
+# e.g. performance, fair
+id:GROW_1
+roll:1d6
+
+# e.g. observance
+id:GROW_2
+roll:1d6+3
+
+# HERO event
+# effects determine type of notable
+
+# e.g. wizard
+id:HERO_MAGE
+roll:2d4
+
+# e.g. performance
+id:HERO_BARD
+roll:2d4
+
+# e.g. merchant
+id:HERO_MERCH
+roll:1d4
+
+# e.g. piracy
+id:HERO_CRIME
+roll:2d4
+
+# e.g. revelation
+id:HERO_RLG
+roll:2d6
+
+# e.g. skirmish, triumph
+id:HERO_WAR
+roll:2d4
+
+# ITEM event
+# effects determine type of item
+
+# e.g. rare_book
+id:ITEM_1
+roll:1d6
+
+# e.g. masterwork, artifact
+id:ITEM_2
+roll:1d12+2

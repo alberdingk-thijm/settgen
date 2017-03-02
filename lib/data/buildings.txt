@@ -218,6 +218,8 @@ event:ARTIFACT
 eventc:1
 event:TRIUMPH
 eventc:1
+event:OCCUPATION
+eventc:1
 
 name:MONUMENT
 type:ADMINISTRATIVE

@@ -4,7 +4,7 @@
 # desc:general description of event in history
 # chance:base chance of event occurring
 # event:event function to perform
-# eventr:result table for event function
+# eventr:result table for event function (see event_results.txt)
 
 # event functions   event result
 # kill - k          KILL
@@ -180,6 +180,16 @@ eventr:HERO_WAR
 name:TRIUMPH
 desc:soldiers at %s are celebrating a military victory!
 chance:0
+event:n
+eventr:HERO_WAR
+
+name:OCCUPATION
+desc:hostile forces have occupied %s!
+chance:0
+event:k
+eventr:KILL_2
+event:d
+eventr:DAM_2
 event:n
 eventr:HERO_WAR
 
