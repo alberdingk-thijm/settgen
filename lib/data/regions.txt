@@ -1,0 +1,39 @@
+#
+# regions.txt
+#
+
+# Define the regions and their bonuses.
+# Format:
+# name:region
+# growth:a float representing growth rate per timestep
+
+name:POLAR
+growth:1
+
+name:TUNDRA
+growth:1
+
+name:BOREAL
+growth:1
+
+name:HEMIBOREAL
+growth:1
+
+name:PARKLAND
+growth:1
+
+name:COAST
+growth:1
+
+name:SWAMP
+growth:1
+
+name:JUNGLE
+growth:1
+
+name:STEPPE
+growth:1
+
+name:DESERT
+growth:1
+

@@ -15,22 +15,15 @@ typedef struct sett {
     int pop;
     int age;
     int growth; // growth rate of the settlement's population
-    region sett_reg;
-    struct district* districts;
-    struct notable* notables;
+    region* sett_reg;
+    district* districts;
+    notable* notables;
 } sett;
 
-typedef enum region {
-    ICECAP,
-    TUNDRA,
-    BOREAL,
-    HEMIBOREAL,
-    COAST,
-    SWAMP,
-    JUNGLE,
-    STEPPE,
-    DESERT
-} region;
+typedef struct region {
+    char[] name;
+    float growth;
+}
 
 typedef struct district {
     int pop;
@@ -48,7 +41,7 @@ typedef struct infrastructure {
     struct event* ev;  // associated events
 } infra;
 
-static sett init_sett(region);
+static sett* init_sett(region r);
 static void execute_timestep(sett* s);
 static void destroy_sett(sett* s);
 

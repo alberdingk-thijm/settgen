@@ -1,6 +1,15 @@
 
 #include "sett.h"
 
+/* Return a pointer to a new sett struct in the specified region.
+ * The sett has an age of 0 and a starting population X, with one
+ * administrative district.
+ * The starting region can offer bonuses: see region.txt for details.
+ */
+static sett* init_sett(region r) {
+
+}
+
 /* Perform one "timestep" for the given sett s, increasing its age by 1.
  * This triggers a number of effects:
  *  - the settlement will grow based on its growth rate (s->growth)
