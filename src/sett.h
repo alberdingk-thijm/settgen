@@ -15,6 +15,7 @@ typedef struct sett {
     int pop;
     int age;
     int growth; // growth rate of the settlement's population
+    bool is_capital;  // boolean for palace building
     region* sett_reg;
     quarter* quarters;
     notable* notables;

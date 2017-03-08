@@ -22,6 +22,7 @@ enum type {
 typedef struct infrastructure {
     char* name;
     struct quarter* home;  // location in sett
+    int preq_flags; // flags showing if prerequisites are met
     enum condition cond;  // infrastructure condition
     enum type t;  // infrastructure type
     struct event* ev;  // associated events
