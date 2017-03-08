@@ -21,4 +21,3 @@ Birth/death rate:
 track lifetimes of notables, kill after X years (modify with events e.g. fire,
 accident, plague)
 
-
