@@ -18,7 +18,7 @@
  */
 /*************************************************************************
  * builder
- * adds districts and history to the settlement
+ * adds quarters and history to the settlement
  *
  *************************************************************************
  */
@@ -26,17 +26,17 @@
 #include <stdlib.h>
 #include "infra.h"
 
-/* Return a new district object with starting_pop people and no buildings.
+/* Return a new quarter object with starting_pop people and no buildings.
  *
  */
-static district build_district(int starting_pop = 2) {
+static quarter build_quarter(int starting_pop = 2) {
  
-    district* new = { .pop = starting_pop, .buildings = NULL };
-    
-    return &district;
+    quarter* new = { .pop = starting_pop, .buildings = NULL };
+ 
+    return &quarter;
 }
 
-/* Begin construction of infrastructure in district d. 
+/* Begin construction of infrastructure in quarter q.
  *
  */
-static bool construct(district* d, infra* i);
+static bool construct(quarter* q, infra* i);

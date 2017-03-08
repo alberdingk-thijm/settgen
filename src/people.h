@@ -3,7 +3,7 @@
 #include "builder.h"
 
 typedef struct notable {
-    district* home;
+    quarter* home;
     char* name;
     int level;
     cls c;
@@ -48,7 +48,7 @@ typedef enum race {
 } race;
 
 static int notable_kill(notable* tokill);
-int notable_create(district* d, char* name, int lvl, race r, cls c);
+int notable_create(quarter* q, char* name, int lvl, race r, cls c);
 int notable_execute_ts(notable* n);
 static int notable_adventure(notable* n);
 static int notable_find_treasure(notable* n);

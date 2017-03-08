@@ -9,14 +9,14 @@
  *  - population
  *  - age
  *  - region type
- *  - districts
+ *  - quarters
  */
 typedef struct sett {
     int pop;
     int age;
     int growth; // growth rate of the settlement's population
     region* sett_reg;
-    district* districts;
+    quarter* quarters;
     notable* notables;
 } sett;
 
@@ -25,17 +25,17 @@ typedef struct region {
     float growth;
 }
 
-typedef struct district {
+typedef struct quarter {
     int pop;
     int age;
     race r;
     enum type t;
     struct infrastructure* buildings;
-} district;
+} quarter;
 
 typedef struct infrastructure {
     char* name;
-    struct district* home;  // location in sett
+    struct quarter* home;  // location in sett
     enum condition;  // infrastructure condition
     enum type t;  // infrastructure type
     struct event* ev;  // associated events

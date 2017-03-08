@@ -12,7 +12,7 @@ history.
 
 Rolling Events:
 
-At each timestep, settgen queries each district in the settlement for its
+At each timestep, settgen queries each quarter in the settlement for its
 infrastructure and acquires an updated list of possible events.
 
 Event Effects:
@@ -30,49 +30,49 @@ KILL effect:
 When an event has a KILL effect, it has a risk of killing some of the
 settlement's population, based on the intensity of the effect. There are two
 levels of the KILL effect, KILL_1 and KILL_2.
-KILL_1: kill a small portion of the population of the district; this is a set
+KILL_1: kill a small portion of the population of the quarter; this is a set
 number as opposed to a percentage.
-KILL_2: kill a percentage of the population of the district; if a high enough
-roll is obtained, subsequent rolls must be made in the other districts.
+KILL_2: kill a percentage of the population of the quarter; if a high enough
+roll is obtained, subsequent rolls must be made in the other quarters.
 
 DAM effect:
 When an event has a DAM effect, it has a risk of damaging infrastructure in
-the district or settlement as a whole, based on the intensity of the effect.
+the quarter or settlement as a whole, based on the intensity of the effect.
 There are two levels of the DAM effect, DAM_1 and DAM_2.
-DAM_1: damage a single building in the district, possibly destroying it
+DAM_1: damage a single building in the quarter, possibly destroying it
 entirely (i.e. the building's condition is Ruined).
-DAM_2: damage multiple buildings in the district, possibly destroying them
+DAM_2: damage multiple buildings in the quarter, possibly destroying them
 entirely. On a high enough roll, subsequent rolls must be made in the other
-districts.
+quarters.
 
 RIOT effect:
 When an event has a RIOT effect, it has a risk of temporarily halting all
-growth and building progress in the district or settlement as a whole, based
+growth and building progress in the quarter or settlement as a whole, based
 on the intensity of the effect. There are three levels of the RIOT effect,
 RIOT_1, RIOT_2 and RIOT_3.
 RIOT_1: growth and building progress are slowed to a fraction of usual speed.
 RIOT_2: growth and building progress are halted (i.e. speed is 0) for the
-district for some length of time.
+quarter for some length of time.
 RIOT_3: growth and building progress are halted (i.e. speed is 0) for the
 entire settlement for some length of time.
 
 GROW effect:
-When an event has a GROW effect, it increases the growth rate of the district
+When an event has a GROW effect, it increases the growth rate of the quarter
 or the entire settlement, based on the intensity of the effect. There are two
 levels of the GROW effect, GROW_1 and GROW_2.
-GROW_1: growth increases by some percentage for the district.
+GROW_1: growth increases by some percentage for the quarter.
 GROW_2: growth increases by some percentage for the entire settlement.
 
 BLD effect:
-When an event has a BLD effect, it increases the build speed of the district
+When an event has a BLD effect, it increases the build speed of the quarter
 or the entire settlement, based on the intensity of the effect. There are two
 levels of the BLD effect, BLD_1 and BLD_2.
-BLD_1: build speed increases by some percentage for the district.
+BLD_1: build speed increases by some percentage for the quarter.
 BLD_2: build speed increases by some percentage for the entire settlement.
 
 HERO effect:
 When an event has a HERO effect, it generates a new notable residing in the
-district. The notable's level is based on the intensity of the effect. There
+quarter. The notable's level is based on the intensity of the effect. There
 are six levels of the HERO effect, HERO_MAGE, HERO_BARD, HERO_MERCH,
 HERO_CRIME, HERO_RLG and HERO_WAR.
 HERO_MAGE: the new notable is a mage or illusionist.
@@ -84,7 +84,7 @@ HERO_WAR: the new notable is a fighter or (rarely) paladin.
 
 ITEM effect:
 When an event has an ITEM effect, it generates a new item residing in the
-district. The item's power is based on the intensity of the effect. There are
+quarter. The item's power is based on the intensity of the effect. There are
 three levels of the ITEM effect, ITEM_1, ITEM_2 and ITEM_3.
 ITEM_1: the new item is a high-quality non-magical item.
 ITEM_2: the new item is a low-quality magic item.

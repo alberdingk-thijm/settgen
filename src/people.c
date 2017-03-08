@@ -11,16 +11,16 @@ static int notable_kill(notable* tokill) {
     return 0;
 }
 
-/* Create a new notable, adding them to the specified district.
+/* Create a new notable, adding them to the specified quarter.
  * Called if an event requests a new notable.
- * \param d - pointer to a district where the notable will be added (assigned to notable.home)
+ * \param d - pointer to a quarter where the notable will be added (assigned to notable.home)
  * \param name - string to be assigned to notable.name
  * \param lvl - integer to be assigned to notable.level
  * \param r - race enum to be assigned to notable.r
  * \param c - class enum to be assigned to notable.c
  * \returnval - 0 if success, error otherwise
  */
-int notable_create(district* d, char* name, int lvl, race r, cls c) {
+int notable_create(quarter* q, char* name, int lvl, race r, cls c) {
     return 0;
 }
 
@@ -35,7 +35,7 @@ int notable_execute_ts(notable* n) {
     // check flags
     // NOTABLE_HEALTHY: give a small bonus to growth and build speed; chance of NOTABLE_ADVENTURING
     // NOTABLE_ADVENTURING: chance of getting NOTABLE_TREASURE, NOTABLE_SICK or NOTABLE_DEAD
-    // NOTABLE_TREASURE: generate an item for the district
+    // NOTABLE_TREASURE: generate an item for the quarter
     // NOTABLE_SICK: chance of NOTABLE_DEAD or NOTABLE_HEALTHY
     // NOTABLE_DEAD: run notable_kill(n)
 }
@@ -57,7 +57,7 @@ static int notable_adventure(notable* n) {
     return 0;
 }
 
-/* Generate an item for the district (n->home) and set flag to NOTABLE_HEALTHY.
+/* Generate an item for the quarter (n->home) and set flag to NOTABLE_HEALTHY.
  * \param n - pointer to the notable
  * \returnval - 0 if success, error otherwise
  */

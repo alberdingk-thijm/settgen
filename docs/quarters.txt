@@ -1,0 +1,11 @@
+---------------------
+QUARTERS IN SETTGEN
+---------------------
+
+Introduction:
+Every settlement is composed of multiple quarters (not necessarily four).
+These represent the administrative divisions of the settlement as were manifest
+in late medieval towns and cities of Europe and elsewhere. Quarters tend to
+coincide with neighbourhoods and split along ethnic, religious or economic
+lines (e.g. the Mughrabi Quarter in Jerusalem, Jodenbreestraat in Amsterdam or
+Shoreditch in London).
