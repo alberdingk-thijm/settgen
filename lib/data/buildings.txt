@@ -59,7 +59,7 @@ event:RARE_BOOK
 eventc:4
 event:LECTURE
 eventc:3
-event:ARTIFACT
+event:FINE_CRAFT
 eventc:1
 event:MASTERWORK
 eventc:1
@@ -141,6 +141,8 @@ eventc:1
 
 name:MILL
 type:INDUSTRIAL
+event:FINE_CRAFT
+eventc:1
 
 name:STABLE
 type:INDUSTRIAL
@@ -153,6 +155,8 @@ event:BREAKTHROUGH
 eventc:2
 event:FIRE
 eventc:2
+event:FINE_CRAFT
+eventc:2
 
 name:GUILD_HALL
 type:INDUSTRIAL
@@ -160,6 +164,8 @@ event:BREAKTHROUGH
 eventc:1
 event:INVESTMENT
 eventc:1
+event:FINE_CRAFT
+eventc:3
 
 name:SHRINE
 type:RELIGIOUS
@@ -192,6 +198,8 @@ event:REVELATION
 eventc:1
 event:OBSERVANCE
 eventc:2
+event:MASTERWORK
+eventc:1
 
 name:WALLS
 type:MILITARY
@@ -207,14 +215,14 @@ name:ARMOURY
 type:MILITARY
 event:SKIRMISH
 eventc:2
-event:ARTIFACT
+event:FINE_CRAFT
 eventc:1
 
 name:FORTRESS
 type:MILITARY
 event:SKIRMISH
 eventc:2
-event:ARTIFACT
+event:FINE_CRAFT
 eventc:1
 event:TRIUMPH
 eventc:1

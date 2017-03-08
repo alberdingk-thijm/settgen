@@ -101,6 +101,12 @@ eventr:GROW_1
 event:n
 eventr:HERO_BARD
 
+name:FINE_CRAFT
+desc:%s has produced a fine piece of work
+chance:0
+event:i
+eventr:ITEM_1
+
 name:MERCHANT
 desc:a rich merchant has arrived at %s
 chance:0
