@@ -20,19 +20,22 @@
 # format:
 # name:name of building
 # type:type of building
+# preq:prerequisite characteristic (another building, region type)
 # event:event to perform (see events.txt)
 # eventc:% change of event occurring
 # reference character for the event
 
 name:LIBRARY
-type:TECHNICAL
+type:ACADEMIC
+preq:ACADEMIC
 event:RARE_BOOK
 eventc:3
 event:BREAKTHROUGH
 eventc:1
 
 name:SCHOOL
-type:TECHNICAL
+type:ACADEMIC
+preq:LIBRARY|(TEMPLE&ACADEMIC)
 event:RARE_BOOK
 eventc:3
 event:LECTURE
@@ -41,7 +44,8 @@ event:WIZARD
 eventc:1
 
 name:UNIVERSITY
-type:TECHNICAL
+type:ACADEMIC
+preq:SCHOOL
 event:RARE_BOOK
 eventc:4
 event:LECTURE
@@ -56,7 +60,8 @@ event:ARTIFACT
 eventc:1
 
 name:OBSERVATORY
-type:TECHNICAL
+type:ACADEMIC
+preq:!(JUNGLE|SWAMP)
 event:RAREBOOK
 eventc:3
 event:WIZARD
@@ -65,14 +70,16 @@ event:CELESTIAL_EVENT
 eventc:1
 
 name:THEATRE
-type:TECHNICAL
+type:RESIDENTIAL
+preq:LIBRARY|MARKET
 event:RARE_BOOK
 eventc:3
 event:PERFORMANCE
 eventc:5
 
 name:MUSEUM
-type:TECHNICAL
+type:RESIDENTIAL
+preq:UNIVERSITY|PALACE
 event:RARE_BOOK
 eventc:4
 event:LECTURE
@@ -83,35 +90,34 @@ event:MASTERWORK
 eventc:1
 
 name:MARKET
-type:COMMERCIAL
+type:INDUSTRIAL
+preq:INDUSTRIAL
 event:MERCHANT
 eventc:2
 event:FAIR
 eventc:1
 
 name:INN
-type:COMMERCIAL
+type:INDUSTRIAL
+preq:MARKET
 event:MERCHANT
 eventc:2
 event:INVESTMENT
-eventc:1
-
-name:CARAVANSARY
-type:COMMERCIAL
-event:MERCHANT
 eventc:1
 event:FAIR
 eventc:1
 
 name:MINT
-type:COMMERCIAL
+type:INDUSTRIAL
+preq:MARKET
 event:MERCHANT
 eventc:1
 event:TAX
 eventc:3
 
 name:CUSTOMS_HOUSE
-type:COMMERCIAL
+type:INDUSTRIAL
+preq:MARKET|(HARBOUR&INDUSTRIAL)
 event:MERCHANT
 eventc:2
 event:TAX
@@ -122,14 +128,16 @@ event:INVESTMENT
 eventc:1
 
 name:LIGHTHOUSE
-type:NAUTICAL
+type:PORT
+preq:COAST
 event:SHIPWRECK
 eventc:-1
 event:PIRACY
 eventc:2
 
 name:HARBOUR
-type:NAUTICAL
+type:PORT
+preq:LIGHTHOUSE
 event:SHIPWRECK
 eventc:-1
 event:PIRACY
@@ -142,7 +150,8 @@ event:MERCHANT
 eventc:2
 
 name:WAREHOUSE
-type:NAUTICAL
+type:PORT
+preq:HARBOUR
 event:PLAGUE
 eventc:1
 event:PIRACY
@@ -151,7 +160,8 @@ event:MERCHANT
 eventc:1
 
 name:SHIPYARD
-type:NAUTICAL
+type:PORT
+preq:HARBOUR&(MARKET|MILL)
 event:EMBARGO
 eventc:1
 event:SKIRMISH
@@ -159,16 +169,19 @@ eventc:1
 
 name:MILL
 type:INDUSTRIAL
+preq:INDUSTRIAL
 event:FINE_CRAFT
 eventc:1
 
 name:STABLE
 type:INDUSTRIAL
+preq:~(JUNGLE|SWAMP|POLAR)
 event:INVESTMENT
 eventc:1
 
 name:FORGE
 type:INDUSTRIAL
+preq:INDUSTRIAL
 event:BREAKTHROUGH
 eventc:2
 event:FIRE
@@ -178,6 +191,7 @@ eventc:2
 
 name:GUILD_HALL
 type:INDUSTRIAL
+preq:MARKET
 event:BREAKTHROUGH
 eventc:1
 event:INVESTMENT
@@ -186,7 +200,8 @@ event:FINE_CRAFT
 eventc:3
 
 name:SHRINE
-type:RELIGIOUS
+type:RESIDENTIAL
+preq:RESIDENTIAL
 event:HERESY
 eventc:2
 event:REVELATION
@@ -195,7 +210,8 @@ event:OBSERVANCE
 eventc:1
 
 name:TEMPLE
-type:RELIGIOUS
+type:RESIDENTIAL
+preq:SHRINE
 event:HERESY
 eventc:1
 event:REVELATION
@@ -204,12 +220,14 @@ event:OBSERVANCE
 eventc:1
 
 name:GARDEN
-type:RELIGIOUS
+type:RESIDENTIAL
+preq:SHRINE
 event:REVELATION
 eventc:3
 
 name:GRAND_TEMPLE
-type:RELIGIOUS
+type:RESIDENTIAL
+preq:TEMPLE
 event:HERESY
 eventc:-1
 event:REVELATION
@@ -220,24 +238,28 @@ event:MASTERWORK
 eventc:1
 
 name:WALLS
-type:MILITARY
+type:ADMINISTRATIVE
+preq:ADMINISTRATIVE
 event:SKIRMISH
 eventc:1
 
 name:BARRACKS
-type:MILITARY
+type:ADMINISTRATIVE
+preq:WALLS
 event:SKIRMISH
 eventc:2
 
 name:ARMOURY
-type:MILITARY
+type:ADMINISTRATIVE
+preq:BARRACKS&(FORGE|MARKET)
 event:SKIRMISH
 eventc:2
 event:FINE_CRAFT
 eventc:1
 
 name:FORTRESS
-type:MILITARY
+type:ADMINISTRATIVE
+preq:ARMOURY
 event:SKIRMISH
 eventc:2
 event:FINE_CRAFT
@@ -249,16 +271,19 @@ eventc:1
 
 name:MONUMENT
 type:ADMINISTRATIVE
+preq:ADMINISTRATIVE
 event:MASTERWORK
 eventc:1
 
 name:ASSEMBLY
 type:ADMINISTRATIVE
+preq:MONUMENT
 event:TRIAL
 eventc:1
 
 name:PRISON
 type:ADMINISTRATIVE
+preq:ASSEMBLY|BARRACKS
 event:TRIAL
 eventc:1
 event:PRISON_BREAK
@@ -266,11 +291,13 @@ eventc:1
 
 name:EMBASSY
 type:ADMINISTRATIVE
+preq:ASSEMBLY
 event:DIPLOMAT
 eventc:2
 
 name:PALACE
 type:ADMINISTRATIVE
+preq:CAPITAL
 event:INVESTMENT
 eventc:2
 event:DIPLOMAT

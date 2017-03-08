@@ -30,16 +30,8 @@ typedef struct quarter {
     int age;
     race r;
     enum type t;
-    struct infrastructure* buildings;
+    struct infra* buildings;
 } quarter;
-
-typedef struct infrastructure {
-    char* name;
-    struct quarter* home;  // location in sett
-    enum condition;  // infrastructure condition
-    enum type t;  // infrastructure type
-    struct event* ev;  // associated events
-} infra;
 
 static sett* init_sett(region r);
 static void execute_timestep(sett* s);

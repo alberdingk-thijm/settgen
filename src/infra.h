@@ -12,79 +12,20 @@ enum condition {
 };
 
 enum type {
-    TECHNICAL,
-    COMMERCIAL,
-    NAUTICAL,
+    RESIDENTIAL,
     INDUSTRIAL,
-    RELIGIOUS,
-    MILITARY,
+    PORT,
+    ACADEMIC,
     ADMINISTRATIVE
 };
 
-enum technical {
-    LIBRARY,
-    THEATRE,
-    SCHOOL,
-    UNIVERSITY,
-    MUSEUM
-};
-
-enum commercial {
-    MARKET,
-    INN,
-    CARAVANSARY,
-    MINT,
-    CUSTOMS_HOUSE
-};
-
-enum nautical {
-    LIGHTHOUSE,
-    HARBOUR,
-    WAREHOUSE,
-    SHIPYARD
-};
-
-enum industrial {
-    MILL,
-    STABLE,
-    FORGE,
-    WORKSHOP,
-    MANUFACTORY,
-    GUILD_HALL
-};
-
-enum religious {
-    SHRINE,
-    TEMPLE,
-    GARDEN,
-    GRAND_TEMPLE
-};
-
-enum military {
-    WALLS,
-    BARRACKS,
-    ARMOURY,
-    FORTRESS
-};
-
-enum administrative {
-    MONUMENT,
-    ASSEMBLY,
-    PRISON,
-    EMBASSY,
-    COURTHOUSE
-};
-
-enum health {
-    WELL,
-    APOTHECARY,
-    AQUEDUCT,
-    SEWERAGE,
-    QUARANTINE,
-    HOSPITAL
-};
-
-
+typedef struct infrastructure {
+    char* name;
+    struct quarter* home;  // location in sett
+    enum condition cond;  // infrastructure condition
+    enum type t;  // infrastructure type
+    struct event* ev;  // associated events
+} infra;
 
 static void load_buildings(char* fpath);
 
