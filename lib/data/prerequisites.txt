@@ -1,0 +1,34 @@
+ACADEMIC - quarter
+LIBRARY|(TEMPLE&ACADEMIC) - quarter & building
+SCHOOL - building
+!(JUNGLE|SWAMP) - region
+LIBRARY|MARKET building
+UNIVERSITY|PALACE - building
+INDUSTRIAL - quarter
+MARKET - building
+MARKET|(HARBOUR&INDUSTRIAL) - quarter & building
+COAST - region
+LIGHTHOUSE - building
+HARBOUR - building
+HARBOUR&(MARKET|MILL) - building
+RESIDENTIAL - quarter
+SHRINE - building
+TEMPLE - building
+ADMINISTRATIVE - quarter
+WALLS - building
+BARRACKS&(FORGE|MARKET) - building
+ARMOURY - building
+MONUMENT - building
+ASSEMBLY|BARRACKS - building
+ASSEMBLY - building
+CAPITAL - capital
+
+Bits:
+CAPITAL:1 (if must be built in capital)
+QUARTER_TYPE:3 (5 unique possibilities)
+(order: RESIDENTIAL     0
+        INDUSTRIAL      1
+        PORT            2
+        ACADEMIC        3
+        ADMINISTRATIVE  4)
+REGION:12 (if some regions not possible)

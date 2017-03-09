@@ -28,6 +28,7 @@
 name:LIBRARY
 type:ACADEMIC
 preq:ACADEMIC
+# 0 011 1111 1111 1111
 event:RARE_BOOK
 eventc:3
 event:BREAKTHROUGH
@@ -36,6 +37,7 @@ eventc:1
 name:SCHOOL
 type:ACADEMIC
 preq:LIBRARY|(TEMPLE&ACADEMIC)
+# 0 011 1111 1111 1111
 event:RARE_BOOK
 eventc:3
 event:LECTURE
@@ -46,6 +48,7 @@ eventc:1
 name:UNIVERSITY
 type:ACADEMIC
 preq:SCHOOL
+# 0 011 1111 1111 1111
 event:RARE_BOOK
 eventc:4
 event:LECTURE
@@ -61,7 +64,8 @@ eventc:1
 
 name:OBSERVATORY
 type:ACADEMIC
-preq:!(JUNGLE|SWAMP)
+preq:SCHOOL
+# 0 011 1101 1010 1111
 event:RAREBOOK
 eventc:3
 event:WIZARD
@@ -71,7 +75,8 @@ eventc:1
 
 name:THEATRE
 type:RESIDENTIAL
-preq:LIBRARY|MARKET
+preq:LIBRARY
+# 0 000 1111 1111 1111
 event:RARE_BOOK
 eventc:3
 event:PERFORMANCE
@@ -80,6 +85,7 @@ eventc:5
 name:MUSEUM
 type:RESIDENTIAL
 preq:UNIVERSITY|PALACE
+# 0 000 1111 1111 1111
 event:RARE_BOOK
 eventc:4
 event:LECTURE
@@ -92,6 +98,7 @@ eventc:1
 name:MARKET
 type:INDUSTRIAL
 preq:INDUSTRIAL
+# 0 001 1111 1111 1111
 event:MERCHANT
 eventc:2
 event:FAIR
@@ -100,6 +107,7 @@ eventc:1
 name:INN
 type:INDUSTRIAL
 preq:MARKET
+# 0 001 1111 1111 1111
 event:MERCHANT
 eventc:2
 event:INVESTMENT
@@ -110,6 +118,7 @@ eventc:1
 name:MINT
 type:INDUSTRIAL
 preq:MARKET
+# 0 001 1111 1111 1111
 event:MERCHANT
 eventc:1
 event:TAX
@@ -118,6 +127,7 @@ eventc:3
 name:CUSTOMS_HOUSE
 type:INDUSTRIAL
 preq:MARKET|(HARBOUR&INDUSTRIAL)
+# 0 001 1111 1111 1111
 event:MERCHANT
 eventc:2
 event:TAX
@@ -129,7 +139,8 @@ eventc:1
 
 name:LIGHTHOUSE
 type:PORT
-preq:COAST
+preq:NONE
+# 0 010 1111 1111 1111
 event:SHIPWRECK
 eventc:-1
 event:PIRACY
@@ -138,6 +149,7 @@ eventc:2
 name:HARBOUR
 type:PORT
 preq:LIGHTHOUSE
+# 0 010 1111 1111 1111
 event:SHIPWRECK
 eventc:-1
 event:PIRACY
@@ -152,6 +164,7 @@ eventc:2
 name:WAREHOUSE
 type:PORT
 preq:HARBOUR
+# 0 010 1111 1111 1111
 event:PLAGUE
 eventc:1
 event:PIRACY
@@ -162,6 +175,7 @@ eventc:1
 name:SHIPYARD
 type:PORT
 preq:HARBOUR&(MARKET|MILL)
+# 0 010 1111 1111 1111
 event:EMBARGO
 eventc:1
 event:SKIRMISH
@@ -169,19 +183,22 @@ eventc:1
 
 name:MILL
 type:INDUSTRIAL
-preq:INDUSTRIAL
+preq:NONE
+# 0 001 0111 0001 0011
 event:FINE_CRAFT
 eventc:1
 
 name:STABLE
 type:INDUSTRIAL
-preq:~(JUNGLE|SWAMP|POLAR)
+preq:NONE
+# 0 001 0111 1110 1111
 event:INVESTMENT
 eventc:1
 
 name:FORGE
 type:INDUSTRIAL
-preq:INDUSTRIAL
+preq:NONE
+# 0 001 1111 1111 1111
 event:BREAKTHROUGH
 eventc:2
 event:FIRE
@@ -192,6 +209,7 @@ eventc:2
 name:GUILD_HALL
 type:INDUSTRIAL
 preq:MARKET
+# 0 001 1111 1111 1111
 event:BREAKTHROUGH
 eventc:1
 event:INVESTMENT
@@ -201,7 +219,8 @@ eventc:3
 
 name:SHRINE
 type:RESIDENTIAL
-preq:RESIDENTIAL
+preq:NONE
+# 0 000 1111 1111 1111
 event:HERESY
 eventc:2
 event:REVELATION
@@ -212,6 +231,7 @@ eventc:1
 name:TEMPLE
 type:RESIDENTIAL
 preq:SHRINE
+# 0 000 1111 1111 1111
 event:HERESY
 eventc:1
 event:REVELATION
@@ -222,12 +242,14 @@ eventc:1
 name:GARDEN
 type:RESIDENTIAL
 preq:SHRINE
+# 0 000 1111 1111 1111
 event:REVELATION
 eventc:3
 
 name:GRAND_TEMPLE
 type:RESIDENTIAL
 preq:TEMPLE
+# 0 000 1111 1111 1111
 event:HERESY
 eventc:-1
 event:REVELATION
@@ -239,19 +261,22 @@ eventc:1
 
 name:WALLS
 type:ADMINISTRATIVE
-preq:ADMINISTRATIVE
+preq:NONE
+# 0 100 1111 1111 1111
 event:SKIRMISH
 eventc:1
 
 name:BARRACKS
 type:ADMINISTRATIVE
 preq:WALLS
+# 0 100 1111 1111 1111
 event:SKIRMISH
 eventc:2
 
 name:ARMOURY
 type:ADMINISTRATIVE
-preq:BARRACKS&(FORGE|MARKET)
+preq:BARRACKS&FORGE
+# 0 100 1111 1111 1111
 event:SKIRMISH
 eventc:2
 event:FINE_CRAFT
@@ -260,6 +285,7 @@ eventc:1
 name:FORTRESS
 type:ADMINISTRATIVE
 preq:ARMOURY
+# 0 100 1111 1111 1111
 event:SKIRMISH
 eventc:2
 event:FINE_CRAFT
@@ -271,33 +297,40 @@ eventc:1
 
 name:MONUMENT
 type:ADMINISTRATIVE
-preq:ADMINISTRATIVE
+preq:NONE
+# 0 100 1111 1111 1111
 event:MASTERWORK
 eventc:1
 
 name:ASSEMBLY
 type:ADMINISTRATIVE
 preq:MONUMENT
+# 0 100 1111 1111 1111
 event:TRIAL
 eventc:1
 
 name:PRISON
 type:ADMINISTRATIVE
 preq:ASSEMBLY|BARRACKS
+# 0 100 1111 1111 1111
 event:TRIAL
 eventc:1
 event:PRISON_BREAK
 eventc:1
+event:SKIRMISH
+eventc:-2
 
 name:EMBASSY
 type:ADMINISTRATIVE
 preq:ASSEMBLY
+# 1 100 1111 1111 1111
 event:DIPLOMAT
 eventc:2
 
 name:PALACE
 type:ADMINISTRATIVE
-preq:CAPITAL
+preq:MONUMENT
+# 1 100 1111 1111 1111
 event:INVESTMENT
 eventc:2
 event:DIPLOMAT
