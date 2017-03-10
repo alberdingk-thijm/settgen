@@ -23,6 +23,8 @@
 
 #include "events.h"
 
+struct event* ev_list;
+
 /*
  * Return the appropriate event function pointer for the given string name.
  */
@@ -52,13 +54,80 @@ static eventf parse_event(char eventc) {
     return f;
 }
 
-/*
- * rare[B]ook event
- * name: rare book
- * effect: a rare book is kept in i->name
- * popmod: 1
- *
+/* KILL1 event effect
+ * Kill a # of people associated with the provided infrastructure,
+ * based on the provided roll.
+ * \param i - pointer to an infra struct
+ * \param roll - an integer representing the roll of one or more dice
+ * \returnval - 0 if successful, otherwise error code
  */
-static int event_rarebook(infra* i, float chance) {
+int event_kill1(struct infra* i, int roll) {
+    struct quarter* q = i->home;
+    // kill #roll people
+    return kill_pop(q, roll);
+}
+
+/* KILL2 event effect
+ * Kill a % of people associated with the provided infrastructure,
+ * based on the provided roll.
+ * \param i - pointer to an infra struct
+ * \param roll - an integer representing the roll of one or more dice
+ * \returnval - 0 if successful, otherwise error code
+ */
+int event_kill2(struct infra* i, int roll) {
+    struct quarter* q = i->home;
+    int total_killed;
+
+    switch (roll) {
+        // case rollover:
+        //  generate a new roll and choose the next quarter
+        //  repeat
+        default:
+            total_killed = ( roll / (float) 100.0 ) * q->pop;
+            return kill_pop(q, total_killed);
+
+    }
+}
+
+/* DAM1 event effect
+ * Damage the provided infrastructure based on the provided roll.
+ * \param i - pointer to an infra struct
+ * \param roll - an integer representing the roll of one or more dice
+ * \returnval - 0 if successful, otherwise error code
+ */
+int event_dam1(struct infra* i, int roll) {
+    if (i->cond <= IN_PROGRESS) {
+        // TODO: determine negative minimum for progress
+        // reset progress
+        i->cond = -100;
+    } else if (i->cond < RUINED) {
+       // building is not already ruined
+        i->cond += roll;
+    }
+
+    return 0;
+}
+
+/* DAM2 event effect
+ * Damage the provided infrastructure and area based on the provided roll.
+ * \param i - pointer to an infra struct
+ * \param roll - an integer representing the roll of one or more dice
+ * \returnval - 0 if successful, otherwise error code
+ */
+int event_dam2(struct infra* i, int roll) {
+    struct quarter* q = i->home;
+    struct infra* curr;
+
+    for ( curr = q->buildings; curr != NULL; curr = curr->next ) {
+        if (curr->cond == IN_PROGRESS) {
+            // TODO: determine negative minimum for progress
+            // reset progress
+            curr->cond = -100;
+        } else if (curr->cond < RUINED) {
+           // building is not already ruined
+            curr->cond += roll;
+        }
+    }
+
     return 0;
 }

@@ -51,6 +51,7 @@ struct quarter {
     int age;
     enum race r;
     enum type t;
+    struct quarter* next;
     struct infra* buildings;
 };
 

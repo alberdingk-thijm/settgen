@@ -20,13 +20,14 @@
  * Representation of infrastructure in a settlement.
  */
 
+// TODO: condition modifier on event freq? (eventc * (1 - cond/100))
 enum condition {
     IN_PROGRESS = -1,
     NEW = 0,
-    FINE = 1,
-    OLD = 2,
-    DERELICT = 3,
-    RUINED = 4
+    FINE = 10,
+    OLD = 25,
+    DERELICT = 50,
+    RUINED = 100
 };
 
 enum type {
@@ -41,9 +42,11 @@ struct infra {
     char* name;
     struct quarter* home;  // location in sett
     int preq_flags; // flags showing if prerequisites are met
+    int build_rate;  // % of building constructed each year
     enum condition cond;  // infrastructure condition
     enum type t;  // infrastructure type
     struct event* ev;  // associated events
+    struct infra* next;  // next infra
 };
 
 static void load_buildings(char* fpath);
