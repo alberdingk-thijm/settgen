@@ -20,8 +20,8 @@
 
 #include "builder.h"
 
-typedef struct notable {
-    quarter* home;
+struct notable {
+    struct quarter* home;
     char* name;
     int level;
     cls c;
@@ -31,7 +31,7 @@ typedef struct notable {
     int flags;
     // flags?
     struct notable* next;
-} notable;
+};
 
 enum people_flags {
     NOTABLE_HEALTHY = 0,
@@ -41,7 +41,7 @@ enum people_flags {
     NOTABLE_DEAD = 8
 };
 
-typedef enum cls {
+enum cls {
     CLERIC,
     DRUID,
     FIGHTER,
@@ -53,9 +53,9 @@ typedef enum cls {
     ILLUSIONIST,
     MONK,
     BARD
-} cls;
+};
 
-typedef enum race {
+enum race {
     HUMAN,
     ELF,
     DWARF,
@@ -63,10 +63,10 @@ typedef enum race {
     HALFELF,
     HALFORC,
     HALFLING
-} race;
+};
 
-static int notable_kill(notable* tokill);
-int notable_create(quarter* q, char* name, int lvl, race r, cls c);
-int notable_execute_ts(notable* n);
-static int notable_adventure(notable* n);
-static int notable_find_treasure(notable* n);
+static int notable_kill(struct notable* tokill);
+int notable_create(struct quarter* q, char* name, int lvl, race r, cls c);
+int notable_execute_ts(struct notable* n);
+static int notable_adventure(struct notable* n);
+static int notable_find_treasure(struct notable* n);

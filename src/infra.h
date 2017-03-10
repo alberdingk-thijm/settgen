@@ -37,14 +37,14 @@ enum type {
     ADMINISTRATIVE
 };
 
-typedef struct infrastructure {
+struct infra {
     char* name;
     struct quarter* home;  // location in sett
     int preq_flags; // flags showing if prerequisites are met
     enum condition cond;  // infrastructure condition
     enum type t;  // infrastructure type
     struct event* ev;  // associated events
-} infra;
+};
 
 static void load_buildings(char* fpath);
 

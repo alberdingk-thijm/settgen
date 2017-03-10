@@ -16,94 +16,48 @@
  *  You should have received a copy of the GNU General Public License along
  *  with this program; if not, write to the Free Software Foundation, Inc.,
  */
-typedef int (*eventf)(infra*, float);
 
-typedef struct event {
-    char* name;
-    char* effect;
-    int pop_mod;
+// eventf: a function that returns an integer and accepts three
+// parameters: a pointer to the calling infrastructure and the
+// a pointer to the event effect to use
+typedef int (*eventf)(struct infra*, int roll);
+
+struct event {
+    char[16] name;
+    char[64] desc;
     float chance;
-    eventf f;
+    eventf[4] f;  // array of possible event functions to call
     struct event* next;
-} event;
+};
 
 static eventf parse_event(char* eventname);
 
 // kill % of population
-static int event_kill(infra* i, float chance);
+static int event_kill1(struct infra* i, int roll);
+static int event_kill2(struct infra* i, int roll);
 // damage building (reduce condition)
-static int event_damage(infra* i, float chance);
+static int event_dam1(struct infra* i, int roll);
+static int event_dam2(struct infra* i, int roll);
 // halt building and growth
-static int event_anger(infra* i, float chance);
-// increase build speed by %
-static int event_build(infra* i, float chance);
+static int event_riot1(struct infra* i, int roll);
+static int event_riot2(struct infra* i, int roll);
+static int event_riot3(struct infra* i, int roll);
 // increase growth speed by %
-static int event_grow(infra* i, float chance);
+static int event_grow1(struct infra* i, int roll);
+static int event_grow2(struct infra* i, int roll);
+// increase build speed by %
+static int event_bld1(struct infra* i, int roll);
+static int event_bld2(struct infra* i, int roll);
 // add notable
-static int event_notable(infra* i, float chance);
+static int event_hero_mage(struct infra* i, int roll);
+static int event_hero_bard(struct infra* i, int roll);
+static int event_hero_merch(struct infra* i, int roll);
+static int event_hero_crime(struct infra* i, int roll);
+static int event_hero_rlg(struct infra* i, int roll);
+static int event_hero_war(struct infra* i, int roll);
 // add item
-static int event_item(infra* i, float chance);
+static int event_item1(struct infra* i, int roll);
+static int event_item2(struct infra* i, int roll);
+static int event_item3(struct infra* i, int roll);
 // add flavour
-static int event_lore(infra* i, float chance);
-
-/*
- * General events
- */
-static int event_fire(infra* i, float chance);
-static int event_accident(infra* i, float chance);
-static int event_breakthrough(infra* i, float chance);
-static int event_investment(infra* i, float chance);
-static int event_visitor(infra* i, float chance);
-
-
-/*
- * Technical events
- */
-static int event_rarebook(infra* i, float chance);
-static int event_celestialevent(infra* i, float chance);
-static int event_strike(infra* i, float chance);
-static int event_lecture(infra* i, float chance);
-static int event_wizard(infra* i, float chance);
-
-/*
- * Commercial events
- */
-static int event_fair(infra* i, float chance);
-static int event_merchant(infra* i, float chance);
-
-/*
- * Nautical events
- */
-static int event_piracy(infra* i, float chance);
-
-/*
- * Industrial events
- */
-
-/*
- * Religious events
- */
-static int event_heresy(infra* i, float chance);
-static int event_festival(infra* i, float chance);
-static int event_observance(infra* i, float chance);
-
-/*
- * Military events
- */
-static int event_skirmish(infra* i, float chance);
-static int event_triumph(infra* i, float chance);
-
-/*
- * Administrative events
- */
-static int event_trial(infra* i, float chance);
-static int event_prisonbreak(infra* i, float chance);
-static int event_diplomatvisit(infra* i, float chance);
-
-/*
- * Other events
- */
-static int event_plague(infra* i, float chance);
-static int event_performance(infra* i, float chance);
-static int event_artifact(infra* i, float chance);
-static int event_masterwork(infra* i, float chance);
+static int event_lore(struct infra* i, int roll);

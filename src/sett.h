@@ -29,30 +29,32 @@
  *  - region type
  *  - quarters
  */
-typedef struct sett {
+struct sett {
     int pop;
     int age;
     int growth; // growth rate of the settlement's population
     bool is_capital;  // boolean for palace building
-    region* sett_reg;
-    quarter* quarters;
-    notable* notables;
-} sett;
+    struct region* sett_reg;
+    struct quarter* quarters;
+    struct notable* notables;
+};
 
-typedef struct region {
-    char[] name;
+struct region {
+    char[32] name;
+    char[256] desc;
     float growth;
+    int offset;
 }
 
-typedef struct quarter {
+struct quarter {
     int pop;
     int age;
-    race r;
+    enum race r;
     enum type t;
     struct infra* buildings;
-} quarter;
+};
 
-static sett* init_sett(region r);
-static void execute_timestep(sett* s);
-static void destroy_sett(sett* s);
+static sett* init_sett(struct region* r);
+static void execute_timestep(struct sett* s);
+static void destroy_sett(struct sett* s);
 

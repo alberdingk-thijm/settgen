@@ -17,11 +17,11 @@
  *  with this program; if not, write to the Free Software Foundation, Inc.,
  */
 
-typedef struct logitem {
+struct logitem {
     // date
     int date;
-    char* msg;
+    char[256] msg;
     struct logitem* next;
-} logitem;
+};
 
-static int add_log(int date, char** msg);
+static int add_log(int date, char* msg);
