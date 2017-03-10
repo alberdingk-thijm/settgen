@@ -157,8 +157,8 @@ chance:3
 event:a
 eventr:RIOT_1
 
-name:PIRACY
-desc:pirates have been harassing ships!
+name:OUTLAWS
+desc:outlaws have been harassing travellers!
 chance:0
 event:a
 eventr:RIOT_1

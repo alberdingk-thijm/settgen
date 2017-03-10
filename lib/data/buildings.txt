@@ -27,19 +27,19 @@
 
 name:LIBRARY
 type:ACADEMIC
-preq:ACADEMIC
+preq:NONE
 # 0 011 1111 1111 1111
 event:RARE_BOOK
-eventc:3
+eventc:2
 event:BREAKTHROUGH
 eventc:1
 
 name:SCHOOL
 type:ACADEMIC
-preq:LIBRARY|(TEMPLE&ACADEMIC)
+preq:LIBRARY|TEMPLE
 # 0 011 1111 1111 1111
 event:RARE_BOOK
-eventc:3
+eventc:2
 event:LECTURE
 eventc:2
 event:WIZARD
@@ -50,9 +50,9 @@ type:ACADEMIC
 preq:SCHOOL
 # 0 011 1111 1111 1111
 event:RARE_BOOK
-eventc:4
+eventc:3
 event:LECTURE
-eventc:4
+eventc:3
 event:BREAKTHROUGH
 eventc:1
 event:WIZARD
@@ -67,9 +67,9 @@ type:ACADEMIC
 preq:SCHOOL
 # 0 011 1101 1010 1111
 event:RAREBOOK
-eventc:3
-event:WIZARD
 eventc:2
+event:WIZARD
+eventc:1
 event:CELESTIAL_EVENT
 eventc:1
 
@@ -78,29 +78,31 @@ type:RESIDENTIAL
 preq:LIBRARY
 # 0 000 1111 1111 1111
 event:RARE_BOOK
-eventc:3
+eventc:2
 event:PERFORMANCE
-eventc:5
+eventc:3
 
 name:MUSEUM
 type:RESIDENTIAL
 preq:UNIVERSITY|PALACE
 # 0 000 1111 1111 1111
 event:RARE_BOOK
-eventc:4
+eventc:2
 event:LECTURE
-eventc:3
-event:FINE_CRAFT
 eventc:1
+event:FINE_CRAFT
+eventc:2
 event:MASTERWORK
 eventc:1
 
 name:MARKET
 type:INDUSTRIAL
-preq:INDUSTRIAL
+preq:NONE
 # 0 001 1111 1111 1111
 event:MERCHANT
 eventc:2
+event:OUTLAWS
+eventc:1
 event:FAIR
 eventc:1
 
@@ -121,17 +123,19 @@ preq:MARKET
 # 0 001 1111 1111 1111
 event:MERCHANT
 eventc:1
+event:OUTLAWS
+eventc:1
 event:TAX
 eventc:3
 
 name:CUSTOMS_HOUSE
 type:INDUSTRIAL
-preq:MARKET|(HARBOUR&INDUSTRIAL)
+preq:MARKET|HARBOUR
 # 0 001 1111 1111 1111
 event:MERCHANT
 eventc:2
 event:TAX
-eventc:3
+eventc:2
 event:EMBARGO
 eventc:2
 event:INVESTMENT
@@ -143,7 +147,7 @@ preq:NONE
 # 0 010 1111 1111 1111
 event:SHIPWRECK
 eventc:-1
-event:PIRACY
+event:OUTLAWS
 eventc:2
 
 name:HARBOUR
@@ -152,14 +156,14 @@ preq:LIGHTHOUSE
 # 0 010 1111 1111 1111
 event:SHIPWRECK
 eventc:-1
-event:PIRACY
+event:OUTLAWS
 eventc:2
 event:PLAGUE
 eventc:2
 event:EMBARGO
 eventc:1
 event:MERCHANT
-eventc:2
+eventc:1
 
 name:WAREHOUSE
 type:PORT
@@ -167,14 +171,12 @@ preq:HARBOUR
 # 0 010 1111 1111 1111
 event:PLAGUE
 eventc:1
-event:PIRACY
-eventc:1
 event:MERCHANT
-eventc:1
+eventc:2
 
 name:SHIPYARD
 type:PORT
-preq:HARBOUR&(MARKET|MILL)
+preq:HARBOUR&MILL
 # 0 010 1111 1111 1111
 event:EMBARGO
 eventc:1
@@ -186,13 +188,15 @@ type:INDUSTRIAL
 preq:NONE
 # 0 001 0111 0001 0011
 event:FINE_CRAFT
-eventc:1
+eventc:2
 
 name:STABLE
 type:INDUSTRIAL
 preq:NONE
 # 0 001 0111 1110 1111
 event:INVESTMENT
+eventc:1
+event:SKIRMISH
 eventc:1
 
 name:FORGE
@@ -265,6 +269,8 @@ preq:NONE
 # 0 100 1111 1111 1111
 event:SKIRMISH
 eventc:1
+event:OUTLAWS
+eventc:1
 
 name:BARRACKS
 type:ADMINISTRATIVE
@@ -307,7 +313,9 @@ type:ADMINISTRATIVE
 preq:MONUMENT
 # 0 100 1111 1111 1111
 event:TRIAL
-eventc:1
+eventc:2
+event:OUTLAWS
+eventc:-1
 
 name:PRISON
 type:ADMINISTRATIVE
@@ -319,13 +327,8 @@ event:PRISON_BREAK
 eventc:1
 event:SKIRMISH
 eventc:-2
-
-name:EMBASSY
-type:ADMINISTRATIVE
-preq:ASSEMBLY
-# 1 100 1111 1111 1111
-event:DIPLOMAT
-eventc:2
+event:OUTLAWS
+eventc:-2
 
 name:PALACE
 type:ADMINISTRATIVE
