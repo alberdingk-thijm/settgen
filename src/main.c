@@ -49,14 +49,21 @@ static int show_splashscreen() {
 
     fp = fopen("../lib/welcome.txt", "r");
     if (!fp) {
+        printf("no file!");
         perror("Failed to open file.");
         return ENOENT;
     }
 
-    while (fread(buf, sizeof(buf), 1, fp) > 0) {
-        nput = puts(ANSI_COLOR_GREEN buf ANSI_COLOR_RESET);
+    nput = fread(buf, sizeof *buf, 1024, fp);
+    while (nput > 0) {
+        buf[nput] = '\0';
+        printf(buf);
+        /*
+        nput = puts(buf);
         if (nput == EOF)
             perror("puts()");
+            */
+        nput = fread(buf, sizeof *buf, 1024, fp);
     }
 
     fclose(fp);
@@ -66,20 +73,10 @@ static int show_splashscreen() {
 int main(int argc, char* argv[]) {
     char input;
     char* old;
+    if (show_splashscreen() != 0) {
+        return EOF;
+    }
     while(1) {
-
-        if (show_splashscreen() != 0) {
-            return EOF;
-        }
-        /*
-        printf("*********************************\n"
-               "* Welcome to settgen!           *\n"
-               "* Please type a command.        *\n"
-               "* 1 - test                      *\n"
-               "* 2 - quit                      *\n"
-               "*********************************\n"
-               );
-               */
 
         if (scanf("%c", &input) == -1) {
             return EOF;
@@ -103,6 +100,7 @@ int main(int argc, char* argv[]) {
                 return 0;
                 break;
             default:
+                printf("Input not recognized. Press 'q' to exit.");
                 break;
         }
     }
