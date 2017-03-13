@@ -22,6 +22,15 @@
 
 #include <errno.h>
 
+// ansi colors
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_BLUE    "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
 // Test function to play with passing strings
 // Note that the static declaration means it may not be destroyed properly
 // (buffer overflows)
@@ -33,11 +42,36 @@ char* foo(char* s) {
     return new;
 }
 
+static int show_splashscreen() {
+    char buf[1024];
+    FILE* fp;
+    int nput;
+
+    fp = fopen("../lib/welcome.txt", "r");
+    if (!fp) {
+        perror("Failed to open file.");
+        return ENOENT;
+    }
+
+    while (fread(buf, sizeof(buf), 1, fp) > 0) {
+        nput = puts(ANSI_COLOR_GREEN buf ANSI_COLOR_RESET);
+        if (nput == EOF)
+            perror("puts()");
+    }
+
+    fclose(fp);
+    return 0;
+}
+
 int main(int argc, char* argv[]) {
-    int input;
+    char input;
     char* old;
     while(1) {
 
+        if (show_splashscreen() != 0) {
+            return EOF;
+        }
+        /*
         printf("*********************************\n"
                "* Welcome to settgen!           *\n"
                "* Please type a command.        *\n"
@@ -45,14 +79,15 @@ int main(int argc, char* argv[]) {
                "* 2 - quit                      *\n"
                "*********************************\n"
                );
+               */
 
-        if (scanf("%d", &input) == -1) {
+        if (scanf("%c", &input) == -1) {
             return EOF;
         }
 
         switch (input) {
-            case 1:
-                printf("Nice job.\nTell me something: ");
+            case 'n':
+                printf("Nothing here yet! Tell me something... \n");
                 old = malloc(256 * sizeof(char));
                 if (old == NULL) {
                     return ENOMEM;
@@ -64,15 +99,12 @@ int main(int argc, char* argv[]) {
                 }
                 free(old);
                 break;
-            case 2:
-                printf("Woah bro.\n");
+            case 'q':
                 return 0;
                 break;
             default:
-                printf("What?\n");
                 break;
         }
     }
     return 0;
 }
-
