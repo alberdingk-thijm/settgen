@@ -163,7 +163,7 @@ eventc:2
 
 name:SHIPYARD
 type:PORT
-preq:HARBOUR&MILL
+preq:HARBOUR&WORKSHOP
 # 0 010 1111 1111 1111
 event:EMBARGO
 eventc:1
@@ -172,7 +172,7 @@ eventc:1
 
 name:CUSTOMS_HOUSE
 type:PORT
-preq:MARKET|HARBOUR
+preq:MARKET&HARBOUR
 # 0 010 1111 1111 1111
 event:MERCHANT
 eventc:2
@@ -183,20 +183,15 @@ eventc:2
 event:INVESTMENT
 eventc:1
 
-name:MILL
-type:INDUSTRIAL
-preq:NONE
-# 0 001 0111 0001 0011
-event:FINE_CRAFT
-eventc:2
-
-name:STABLE
+name:WORKSHOP
 type:INDUSTRIAL
 preq:NONE
 # 0 001 1111 1111 1111
 event:INVESTMENT
 eventc:1
-event:SKIRMISH
+event:FAIR
+eventc:1
+event:FINE_CRAFT
 eventc:1
 
 name:FORGE
@@ -212,7 +207,7 @@ eventc:2
 
 name:GUILD_HALL
 type:INDUSTRIAL
-preq:MARKET
+preq:MARKET&WORKSHOP
 # 0 001 1111 1111 1111
 event:BREAKTHROUGH
 eventc:1

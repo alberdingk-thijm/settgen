@@ -35,7 +35,6 @@
 name:TUNDRA
 desc:on a cold and treeless plain
 growth:1
-offset:0
 
 name:TAIGA
 desc:surrounded by coniferous woodlands
