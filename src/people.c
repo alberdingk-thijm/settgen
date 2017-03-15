@@ -31,7 +31,11 @@ int notable_create(quarter* q, char* name, int lvl, race r, cls c) {
  */
 int notable_execute_ts(notable* n) {
     // increment age by 1
+    n->age++;
     // if n.age >= n.maxage, set NOTABLE_DEAD
+    if (n->age >= n->maxage) {
+        n->flags |= NOTABLE_DEAD;
+    }
     // check flags
     // NOTABLE_HEALTHY: give a small bonus to growth and build speed; chance of NOTABLE_ADVENTURING
     // NOTABLE_ADVENTURING: chance of getting NOTABLE_TREASURE, NOTABLE_SICK or NOTABLE_DEAD

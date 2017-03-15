@@ -34,7 +34,7 @@ struct sett {
     int age;
     int growth; // growth rate of the settlement's population
     bool is_capital;  // boolean for palace building
-    struct region* sett_reg;
+    struct region* reg;
     struct quarter* quarters;
     struct notable* notables;
 };
@@ -55,7 +55,7 @@ struct quarter {
     struct infra* buildings;
 };
 
-static sett* init_sett(struct region* r);
-static void execute_timestep(struct sett* s);
-static void destroy_sett(struct sett* s);
+struct sett* init_sett(struct region* r);
+void execute_timestep(struct sett* s);
+void destroy_sett(struct sett* s);
 

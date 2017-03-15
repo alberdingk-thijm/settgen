@@ -17,6 +17,7 @@
  *  with this program; if not, write to the Free Software Foundation, Inc.,
  */
 
+#include <stdlib.h>
 #include "sett.h"
 
 /* Return a pointer to a new sett struct in the specified region.
@@ -24,8 +25,22 @@
  * administrative quarter.
  * The starting region can offer bonuses: see region.txt for details.
  */
-static sett* init_sett(region r) {
+struct sett* init_sett(struct region* r, bool is_cap) {
+    // allocate space
+    struct sett* s = zmalloc(sizeof(struct sett));
+    if (!s) {
+        perror("malloc");
+        exit(1);
+    }
+    s->age = 0;
+    s->growth = r->growth;
+    s->is_capital = is_cap;
+    s->reg = r;
+    s->quarters = build_quarter();  //TODO: specify race and type
+    s->notables = NULL;
 
+    return s;
+    
 }
 
 /* Perform one "timestep" for the given sett s, increasing its age by 1.
@@ -40,10 +55,23 @@ static sett* init_sett(region r) {
  *    If a building's event roll succeeds, the event's effects are counted
  *    on the following timestep.
  */
-static void execute_timestep(sett* s) {
+void execute_timestep(struct sett* s) {
     // increase age
+    s->age++;
     // grow settlement
+    s->pop += s->growth;
     // build infrastructure
+    struct quarter* curr_q;
+    for ( curr_q = s->quarters; curr_q; curr_q = curr_q->next ) {
+        // loop through buildings and execute
+        // the building code
+    }
     // age notables
+    struct notable* curr_n;
+    for ( curr_n = s->notables; curr_n; curr_n = curr_n->next ) {
+        // loop through the notables and age them
+        notable_execute_ts(curr_n);
+    }
     // roll events
+    // TODO
 }

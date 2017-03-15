@@ -41,12 +41,18 @@ enum type {
 struct infra {
     char* name;
     struct quarter* home;  // location in sett
-    int preq_flags; // flags showing if prerequisites are met
-    int build_rate;  // % of building constructed each year
+    short flags; // flags showing if prerequisites are met
+    float build_rate;  // % of building constructed each year
     enum condition cond;  // infrastructure condition
     enum type t;  // infrastructure type
     struct event* ev;  // associated events
     struct infra* next;  // next infra
+};
+
+struct infra_choice {
+    // TODO: field representing a check for prerequisite structures
+    short flags;
+    struct infra* i;
 };
 
 static void load_buildings(char* fpath);
