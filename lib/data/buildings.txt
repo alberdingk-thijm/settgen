@@ -36,7 +36,7 @@ eventc:1
 
 name:SCHOOL
 type:ACADEMIC
-preq:LIBRARY|TEMPLE
+preq:LIBRARY&TEMPLE
 # 0 011 1111 1111 1111
 event:RARE_BOOK
 eventc:2
@@ -84,7 +84,7 @@ eventc:3
 
 name:MUSEUM
 type:RESIDENTIAL
-preq:UNIVERSITY|PALACE
+preq:UNIVERSITY
 # 0 000 1111 1111 1111
 event:RARE_BOOK
 eventc:2
@@ -119,7 +119,7 @@ eventc:1
 
 name:MINT
 type:INDUSTRIAL
-preq:MARKET
+preq:FORGE&MARKET
 # 0 001 1111 1111 1111
 event:MERCHANT
 eventc:1
@@ -127,19 +127,6 @@ event:OUTLAWS
 eventc:1
 event:TAX
 eventc:3
-
-name:CUSTOMS_HOUSE
-type:INDUSTRIAL
-preq:MARKET|HARBOUR
-# 0 001 1111 1111 1111
-event:MERCHANT
-eventc:2
-event:TAX
-eventc:2
-event:EMBARGO
-eventc:2
-event:INVESTMENT
-eventc:1
 
 name:LIGHTHOUSE
 type:PORT
@@ -183,6 +170,19 @@ eventc:1
 event:SKIRMISH
 eventc:1
 
+name:CUSTOMS_HOUSE
+type:PORT
+preq:MARKET|HARBOUR
+# 0 010 1111 1111 1111
+event:MERCHANT
+eventc:2
+event:TAX
+eventc:2
+event:EMBARGO
+eventc:2
+event:INVESTMENT
+eventc:1
+
 name:MILL
 type:INDUSTRIAL
 preq:NONE
@@ -193,7 +193,7 @@ eventc:2
 name:STABLE
 type:INDUSTRIAL
 preq:NONE
-# 0 001 0111 1110 1111
+# 0 001 1111 1111 1111
 event:INVESTMENT
 eventc:1
 event:SKIRMISH

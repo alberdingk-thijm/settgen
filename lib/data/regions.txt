@@ -40,45 +40,40 @@ offset:0
 name:TAIGA
 desc:surrounded by coniferous woodlands
 growth:1
-offset:1
 
 name:WOODLAND
 desc:nestled in open temperate woodlands
 growth:1
-offset:2
 
 name:PARKLAND
 desc:at the centre of well-maintained farms and groves
 growth:1
-offset:3
 
 name:SCRUB
 desc:looking across thickets and shrubs
 growth:1
-offset:4
+
+name:MACCHIA
+desc:settled in thick evergreen shrubland
+growth:1
 
 name:TROPICAL_SHRUBLAND
 desc:amidst a mixture of thorny grasses and tropical plants
 growth:1
-offset:5
 
 name:FLOODPLAIN
 desc:along a wide alluvial plain
 growth:1
-offset:6
 
 name:JUNGLE
 desc:hidden within deep and wet forests
 growth:1
-offset:7
 
 name:STEPPE
 desc:scattered on an arid steppe
 growth:1
-offset:8
 
 name:DESERT
 desc:under the hot desert sun
 growth:1
-offset:9
 
