@@ -9,3 +9,13 @@ in late medieval towns and cities of Europe and elsewhere. Quarters tend to
 coincide with neighbourhoods and split along ethnic, religious or economic
 lines (e.g. the Mughrabi Quarter in Jerusalem, Jodenbreestraat in Amsterdam or
 Shoreditch in London).
+As a settlement grows, its citizens spill out of its first quarter and into
+new quarters. The new quarter may be similar to the first, or it may be made
+up of other races or professions. It contains buildings of its own, and, for
+the most part, events in the new quarter will not affect the others.
+
+New quarters:
+
+New buildings:
+
+
