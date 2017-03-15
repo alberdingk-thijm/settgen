@@ -5,7 +5,7 @@
     "preq": null,
     "events": [
         { "name": "HERESY", "chance": 2 },
-        { "name": "REVELATION", "chance": 1 },
+        { "name": "REVELATION", "chance": 1 }],
     "flags": "0x0fff"
 },
 {
