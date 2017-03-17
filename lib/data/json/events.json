@@ -24,7 +24,7 @@
     "id": 4,
     "desc": "%s received a welcome investment",
     "chance": 3,
-    "event": [ "BLD_2" ]
+    "event": [ "GOLD_1" ]
 },
 {
     "name": "RARE_BOOK",
@@ -104,39 +104,39 @@
     "event": [ "ITEM_1" ]
 },
 {
-    "name": "MERCHANT",
+    "name": "MERCHANTS",
     "id": 32,
-    "desc": "a rich merchant has arrived at %s",
+    "desc": "rich merchants have arrived at %s",
     "chance": 0,
-    "event": [ "HERO_MERCH" ]
-},
-{
-    "name": "FAIR",
-    "id": 33,
-    "desc": "a fair has been set up near %s",
-    "chance": 0,
-    "event": [ "BLD_1" ]
+    "event": [ "HERO_MERCH", "GOLD_1" ]
 },
 {
     "name": "TAX",
-    "id": 34,
+    "id": 33,
     "desc": "%s has established a new tax",
     "chance": 0,
-    "event": [ "RIOT_1", "BLD_1" ]
+    "event": [ "RIOT_1", "GOLD_2" ]
 },
 {
     "name": "EMBARGO",
-    "id": 35,
+    "id": 34,
     "desc": "an embargo was established by %s",
     "chance": 0,
     "event": [ "RIOT_2", "HERO_CRIME" ]
 },
 {
     "name": "OUTLAWS",
-    "id": 36,
+    "id": 35,
     "desc": "outlaws have been harassing travellers!",
     "chance": 0,
     "event": [ "RIOT_1", "HERO_CRIME" ]
+},
+{
+    "name": "ARCHITECT",
+    "id": 36,
+    "desc": "a talented architect has arrived at %s",
+    "chance": 0,
+    "event": [ "BLD_2" ]
 },
 {
     "name": "PLAGUE",
@@ -171,5 +171,5 @@
     "id": 44,
     "desc": "a dignitary is visiting at %s",
     "chance": 0,
-    "event": [ "BLD_2", "GROW_2" ]
+    "event": [ "GOLD_2", "GROW_2", "BLD_1" ]
 }

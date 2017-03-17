@@ -3,6 +3,7 @@
     "id": 1,
     "type": "RESIDENTIAL",
     "preq": null,
+    "cost": 100,
     "events": [
         { "name": "HERESY", "chance": 2 },
         { "name": "REVELATION", "chance": 1 }],
@@ -13,6 +14,7 @@
     "id": 2,
     "type": "RESIDENTIAL",
     "preq": ["SHRINE"],
+    "cost": 300,
     "events": [
         { "name": "HERESY", "chance": 1 },
         { "name": "REVELATION", "chance": 2 },
@@ -24,6 +26,7 @@
     "id": 3,
     "type": "RESIDENTIAL",
     "preq": [ "SHRINE" ],
+    "cost": 500,
     "events": [
         { "name": "REVELATION", "chance": 3 }],
     "flags": "0x0fff"
@@ -33,6 +36,7 @@
     "id": 4,
     "type": "RESIDENTIAL",
     "preq": [ "TEMPLE" ],
+    "cost": 1500,
     "events": [
         { "name": "HERESY", "chance": -1 },
         { "name": "REVELATION", "chance": 1 },
@@ -45,6 +49,7 @@
     "id": 5,
     "type": "RESIDENTIAL",
     "preq": [ "LIBRARY", "GARDEN" ],
+    "cost": 1000,
     "events": [
         { "name": "RARE_BOOK", "chance": 1 },
         { "name": "PERFORMANCE", "chance": 2 }],
@@ -55,6 +60,7 @@
     "id": 6,
     "type": "RESIDENTIAL",
     "preq": [ "UNIVERSITY", "THEATRE" ],
+    "cost": 4000,
     "events": [
         { "name": "RARE_BOOK", "chance": 2 },
         { "name": "LECTURE", "chance": 1 },
@@ -67,10 +73,10 @@
     "id": 101,
     "type": "INDUSTRIAL",
     "preq": null,
+    "cost": 100,
     "events": [
-        { "name": "MERCHANT", "chance": 2 },
+        { "name": "MERCHANTS", "chance": 2 },
         { "name": "OUTLAWS", "chance": 1 },
-        { "name": "FAIR", "chance": 1 }],
     "flags": "0x1fff"
 },
 {
@@ -78,10 +84,10 @@
     "id": 102,
     "type": "INDUSTRIAL",
     "preq": [ "MARKET" ],
+    "cost": 300,
     "events": [
-        { "name": "MERCHANT", "chance": 2 },
+        { "name": "MERCHANTS", "chance": 2 },
         { "name": "OUTLAWS", "chance": 1 },
-        { "name": "FAIR", "chance": 2 }],
     "flags": "0x1fff"
 },
 {
@@ -89,6 +95,7 @@
     "id": 103,
     "type": "INDUSTRIAL",
     "preq": null,
+    "cost": 200,
     "events": [
         { "name": "BREAKTHROUGH", "chance": 1 },
         { "name": "FIRE", "chance": 1 },
@@ -100,6 +107,7 @@
     "id": 104,
     "type": "INDUSTRIAL",
     "preq": [ "FORGE", "MARKET" ],
+    "cost": 700,
     "events": [
         { "name": "OUTLAWS", "chance": 1 },
         { "name": "TAX", "chance": 3 }],
@@ -110,6 +118,7 @@
     "id": 105,
     "type": "INDUSTRIAL",
     "preq": null,
+    "cost": 400,
     "events": [
         { "name": "ACCIDENT", "chance": -1},
         { "name": "FINE_CRAFT", "chance": 2 }],
@@ -120,10 +129,11 @@
     "id": 106,
     "type": "INDUSTRIAL",
     "preq": [ "MARKET", "WORKSHOP" ],
+    "cost": 1000,
     "events": [
         { "name": "BREAKTHROUGH", "chance": 1 },
-        { "name": "INVESTMENT", "chance": 1 },
-        { "name": "MERCHANT", "chance": 1 },
+        { "name": "ARCHITECT", "chance": 1 },
+        { "name": "MERCHANTS", "chance": 1 },
         { "name": "STRIKE", "chance": 1 },
         { "name": "FINE_CRAFT", "chance": 3 }],
     "flags": "0x1fff"
@@ -133,6 +143,7 @@
     "id": 201,
     "type": "PORT",
     "preq": null,
+    "cost": 200,
     "events": [
         { "name": "OUTLAWS", "chance": 2 },
         { "name": "FIRE", "chance": 1 }],
@@ -143,10 +154,11 @@
     "id": 202,
     "type": "PORT",
     "preq": [ "LIGHTHOUSE" ],
+    "cost": 600,
     "events": [
         { "name": "OUTLAWS", "chance": 2 },
         { "name": "PLAGUE", "chance": 2 },
-        { "name": "MERCHANT", "chance": 1 }],
+        { "name": "MERCHANTS", "chance": 1 }],
     "flags": "0x2fff"
 },
 {
@@ -154,9 +166,10 @@
     "id": 203,
     "type": "PORT",
     "preq": [ "HARBOUR" ],
+    "cost": 900,
     "events": [
         { "name": "PLAGUE", "chance": 1 },
-        { "name": "MERCHANT", "chance": 2 }],
+        { "name": "MERCHANTS", "chance": 2 }],
     "flags": "0x2fff"
 },
 {
@@ -164,6 +177,7 @@
     "id": 204,
     "type": "PORT",
     "preq": [ "HARBOUR", "WORKSHOP" ],
+    "cost": 1500,
     "events": [
         { "name": "INVESTMENT", "chance": 1},
         { "name": "EMBARGO", "chance": 1 },
@@ -175,8 +189,9 @@
     "id": 205,
     "type": "PORT",
     "preq": [ "MARKET", "WAREHOUSE" ],
+    "cost": 2000,
     "events": [
-        { "name": "MERCHANT", "chance": 2 },
+        { "name": "MERCHANTS", "chance": 2 },
         { "name": "TAX", "chance": 2 },
         { "name": "EMBARGO", "chance": 2 },
         { "name": "INVESTMENT", "chance": 1 },
@@ -188,6 +203,7 @@
     "id": 206,
     "type": "PORT",
     "preq": [ "TEMPLE", "HARBOUR" ],
+    "cost": 1200,
     "events": [
         { "name": "PLAGUE", "chance": -2 },
         { "name": "REVELATION", "chance": 1 }],
@@ -198,6 +214,7 @@
     "id": 301,
     "type": "ACADEMIC",
     "preq": null,
+    "cost": 400,
     "events": [
         { "name": "RARE_BOOK", "chance": 1 },
         { "name": "BREAKTHROUGH", "chance": 1 }],
@@ -208,6 +225,7 @@
     "id": 302,
     "type": "ACADEMIC",
     "preq": [ "LIBRARY", "TEMPLE" ],
+    "cost": 1200,
     "events": [
         { "name": "RARE_BOOK", "chance": 2 },
         { "name": "LECTURE", "chance": 2 },
@@ -218,11 +236,13 @@
     "id": 303,
     "type": "ACADEMIC",
     "preq": [ "SCHOOL" ],
+    "cost": 3000,
     "events": [
         { "name": "RARE_BOOK", "chance": 2 },
         { "name": "LECTURE", "chance": 2 },
         { "name": "BREAKTHROUGH", "chance": 1 },
         { "name": "STRIKE", "chance": 1 },
+        { "name": "ARCHITECT", "chance": 1 }],
     "flags": "0x4fff"
 },
 {
@@ -230,6 +250,7 @@
     "id": 304,
     "type": "ACADEMIC",
     "preq": [ "SCHOOL" ],
+    "cost": 2500,
     "events": [
         { "name": "RARE_BOOK", "chance": 1 },
         { "name": "CELESTIAL_EVENT", "chance": 2 }],
@@ -240,6 +261,7 @@
     "id": 305,
     "type": "ACADEMIC",
     "preq": [ "UNIVERSITY" ],
+    "cost": 5000,
     "events": [
         { "name": "RARE_BOOK", "chance": 1 },
         { "name": "LECTURE", "chance": 2 },
@@ -253,6 +275,7 @@
     "id": 401,
     "type": "ADMINISTRATIVE",
     "preq": null,
+    "cost": 100,
     "events": [
         { "name": "SKIRMISH", "chance": 1 },
         { "name": "OUTLAWS", "chance": 1 }],
@@ -263,6 +286,7 @@
     "id": 402,
     "type": "ADMINISTRATIVE",
     "preq": [ "WALLS" ],
+    "cost": 300,
     "events": [
         { "name": "SKIRMISH", "chance": 3 }],
     "flags": "0x5fff"
@@ -272,6 +296,7 @@
     "id": 403,
     "type": "ADMINISTRATIVE",
     "preq": [ "BARRACKS", "FORGE" ],
+    "cost": 1000,
     "events": [
         { "name": "SKIRMISH", "chance": 2 },
         { "name": "FINE_CRAFT", "chance": 1 }],
@@ -282,6 +307,7 @@
     "id": 404,
     "type": "ADMINISTRATIVE",
     "preq": [ "ARMOURY" ],
+    "cost": 2000,
     "events": [
         { "name": "SKIRMISH", "chance": 2 },
         { "name": "FINE_CRAFT", "chance": 1 },
@@ -293,6 +319,7 @@
     "id": 405,
     "type": "ADMINISTRATIVE",
     "preq": null,
+    "cost": 200,
     "events": [
         { "name": "TRIAL", "chance": 2 },
         { "name": "OUTLAWS", "chance": -1 }],
@@ -303,6 +330,7 @@
     "id": 406,
     "type": "ADMINISTRATIVE",
     "preq": [ "ASSEMBLY", "BARRACKS" ],
+    "cost": 800,
     "events": [
         { "name": "TRIAL", "chance": 2 },
         { "name": "SKIRMISH", "chance": -2 },
@@ -314,6 +342,7 @@
     "id": 407,
     "type": "ADMINISTRATIVE",
     "preq": [ "WALLS", "ASSEMBLY" ],
+    "cost": 5000,
     "events": [
         { "name": "INVESTMENT", "chance": 2 },
         { "name": "DIPLOMAT", "chance": 2 },

@@ -1,0 +1,34 @@
+------------
+NOTABLES
+------------
+
+Introduction:
+...
+
+Notable Activities:
+
+HEALTHY:
+- contribute to growth and build speed
+- chance of sick (grows with age) or adventuring
+
+TRADING:
+- merchant only
+- contribute to growth and build speed
+- contribute gold
+- chance of sick (grows with age)
+(to consider: chance of mercantile expedition?)
+
+ADVENTURING:
+- away for some length of time (stop contributing)
+- chance of TREASURE, SICK or DEAD
+
+TREASURE:
+- contribute flat gold and/or an item
+- revert to HEALTHY
+
+SICK:
+- stop contributing
+- chance of HEALTHY or DEAD
+
+DEAD:
+- remembered in history, any items acquired may be lost

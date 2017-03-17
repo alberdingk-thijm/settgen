@@ -16,13 +16,14 @@ At each timestep, settgen queries each quarter in the settlement for its
 infrastructure and acquires an updated list of possible events.
 
 Event Effects:
-There are seven different event effects.
+There are eight different event effects.
 
 - Kill citizens (KILL)
 - Damage buildings (DAM)
 - Slow growth and building (RIOT)
 - Grow the settlement (GROW)
 - Build more quickly (BLD)
+- Earn gold faster (GOLD) (NEW)
 - Add a new notable (HERO)
 - Add a new item (ITEM)
 
@@ -70,6 +71,14 @@ levels of the BLD effect, BLD_1 and BLD_2.
 BLD_1: build speed increases by some percentage for the quarter.
 BLD_2: build speed increases by some percentage for the entire settlement.
 
+GOLD effect:
+When an event has a GOLD effect, it increases the amount of gold earned by the
+settlement per timestep, based on the intensity of the effect. There are two
+levels of the GOLD effect, GOLD_1 and GOLD_2.
+GOLD_1: a lump sum of gold is earned this one timestep.
+GOLD_2: a lump sum of gold is earned with an additional percentage increase
+for some length of time.
+
 HERO effect:
 When an event has a HERO effect, it generates a new notable residing in the
 quarter. The notable's level is based on the intensity of the effect. There
@@ -78,6 +87,7 @@ HERO_CRIME, HERO_RLG and HERO_WAR.
 HERO_MAGE: the new notable is a mage or illusionist.
 HERO_BARD: the new notable is a bard.
 HERO_MERCH: the new notable is a merchant (any class). Can generate items.
+Increases gold generated per timestep.
 HERO_CRIME: the new notable is a thief or assassin.
 HERO_RLG: the new notable is a cleric, paladin, monk or (rarely) druid.
 HERO_WAR: the new notable is a fighter or (rarely) paladin.
