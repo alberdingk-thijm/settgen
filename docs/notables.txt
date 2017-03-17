@@ -1,30 +1,83 @@
-------------
-NOTABLES
-------------
+-------------------
+NOTABLES IN SETTGEN
+-------------------
 
 Introduction:
-...
+Notables are the "interesting" people of a settlement: the adventurers, local
+heroes, and powerful merchants. settgen monitors their actions over time,
+reporting when a notable achieves success (adventuring or trading) and when a
+notable grows ill or dies. Notables are mortal and their bonuses do not last
+forever, but a good settlement will attract more notables.
+Notables have a few special traits: they have a race, a class, a level in that
+class, a chosen headquarters (a building in a particular district) and they
+may also own some items (which have a chance of being given to the
+headquarters when the notable dies). This can affect what activities they get
+up to in town, and how effective a notable is at their activity.
+
+New Settlements:
+New settlements start with one random notable automatically promoted to the
+GOVERNING activity (meaning that this notable will not ADVENTURE, TRADE or
+discover TREASURE). Without at least one notable GOVERNING, a period of
+ANARCHY occurs until a new notable is promoted.
+New settlements will hence want to acquire a small roster of young notables
+quickly, in order to mitigate harmful events and grow smoothly. Prioritizing
+buildings that start notable-generating events (e.g. a SHRINE to get
+REVELATION, or a MARKET to get MERCHANTS and OUTLAWS) is critical.
 
 Notable Activities:
+There are several activities common to all notables, and some special
+activites based on a notable's characteristics.
 
 HEALTHY:
+Healthy notables (the default state) assist the community in growing and
+expanding. They provide a small bonus to growth and build speed each timestep,
+based on their level. Healthy notables can be promoted to GOVERNING, or choose
+to go ADVENTURING or TRADING (a special MERCHANT-only form of ADVENTURING).
 - contribute to growth and build speed
-- chance of sick (grows with age) or adventuring
+- chance of SICK (grows with age) or ADVENTURING or DEAD
 
 TRADING:
+Trading notables provide contributions to growth and build speed, much the same
+way as HEALTHY notables, but they also contribute gold each timestep. Only
+MERCHANT notables can go trading, but doing so is much less dangerous than
+ADVENTURING. Trading notables, like ADVENTURING ones, are not counted as "in
+town" and hence are not affected by settlement events with KILL effects. They
+will return to a HEALTHY state after a length of time based on their level
+(higher-level notables can go trading for longer), and are still slightly
+suscepitible to becoming SICK or DEAD.
 - merchant only
 - contribute to growth and build speed
 - contribute gold
-- chance of sick (grows with age)
+- chance of SICK (grows with age) or DEAD
 (to consider: chance of mercantile expedition?)
 
+GOVERNING:
+Governing notables contribute more to growth and build speed than HEALTHY or
+TRADING notables, but are incapable of going ADVENTURING or TRADING. When
+disaster strikes, they are just as likely to die as the rest of the townsfolk.
+Uniquely, notables must be deliberately promoted to governing: they will not
+automatically do so, even if there are currently no governing notables in the
+settlement. Without at least one governing notable, settlement growth and
+building progress is slowed as though a RIOT event effect were ongoing.
+Governing notables are susceptible to becoming SICK or DEAD, with a slightly
+higher chance of the latter (governing is a stressful and dangerous job!)
+- deliberate promotion
+- contribute to growth and build speed (bonus over HEALTHY)
+- chance of SICK (grows with age) or DEAD
+(to consider: political removal or assassination?)
+
 ADVENTURING:
+Adventuring notables are not contributing to the settlement for the length of
+their adventure. However, upon the completion of the adventure, they have a
+chance of discovering TREASURE and awarding their home settlement with a
+large quantity of GOLD. They may also acquire rare items (in the same fashion
+as ITEM event effects) which are kept on their person or in their
+headquarters. Lastly, if a notable successfully completes an adventure, they
+will gain a level of experience. Adventuring is nonetheless far more
+dangerous than the usual HEALTHY state, however, and adventuring notables
+have a greater chance of becoming SICK or DEAD.
 - away for some length of time (stop contributing)
 - chance of TREASURE, SICK or DEAD
-
-TREASURE:
-- contribute flat gold and/or an item
-- revert to HEALTHY
 
 SICK:
 - stop contributing
@@ -32,3 +85,8 @@ SICK:
 
 DEAD:
 - remembered in history, any items acquired may be lost
+
+TREASURE:
+- contribute flat gold and/or an item
+- revert to HEALTHY
+
