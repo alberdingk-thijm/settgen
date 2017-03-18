@@ -15,6 +15,15 @@ up of other races or professions. It contains buildings of its own, and, for
 the most part, events in the new quarter will not affect the others.
 
 New quarters:
+A new settlement begins with a single quarter and no buildings. The type of
+the quarter will also affect the settlement's starting population, gold and
+first governor's class. The starting gold will be enough to start construction
+on a basic building in the district (although it could also be spent to INVITE
+TALENT to the settlement.
+After the first quarter, new quarters can be built each time the settlement's
+population doubles. Hence, settlements will acquire their first few quarters
+quickly and then slow over time. There is no limit on the number of quarters
+of a particular type, although multiple quarters of the same type will
 
 New buildings:
 

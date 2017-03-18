@@ -24,6 +24,19 @@ quickly, in order to mitigate harmful events and grow smoothly. Prioritizing
 buildings that start notable-generating events (e.g. a SHRINE to get
 REVELATION, or a MARKET to get MERCHANTS and OUTLAWS) is critical.
 
+Generating Notables:
+Notables can be acquired in two ways: building events like LECTURE or
+SKIRMISH, or buy spending gold to INVITE TALENT. In the first case, an event
+will have a variable chance of producing a notable who will make the building
+their headquarters. In the second, a flat sum of gold can be paid to invite a
+notable to join the settlement instantly. The more buildings there are in a
+settlement, the more powerful the invited notable will be.
+
+Maximum Notables:
+A settlement can never have more notables than 10% of its total population.
+Once this threshold is reached, building events which generate notables will
+not take effect, and it is not possible to INVITE TALENT.
+
 Notable Activities:
 There are several activities common to all notables, and some special
 activites based on a notable's characteristics.
@@ -80,13 +93,30 @@ have a greater chance of becoming SICK or DEAD.
 - chance of TREASURE, SICK or DEAD
 
 SICK:
+Sick notables do not contribute to the settlement, but remain within it until
+they are cured and HEALTHY or DEAD. A notable's class may also help avoid
+sickness (e.g. paladins cannot become sick), but others run the risk of
+becoming sick from any other activity. The chance of sickness also increases
+with the age of the notable. If sickness continues for an extended period,
+notables' chances of survival are progressively lowered.
 - stop contributing
 - chance of HEALTHY or DEAD
 
 DEAD:
+Dead notables are, obviously, not contributing to the settlement. Their
+presence will be recorded in the settlement's history, but any items they
+owned are lost or donated to their headquarters, and they can no longer revert
+to any other state. If a notable dies while the only GOVERNING notable in a
+settlement, settlement growth and building progress become slowed until a new
+notable begins GOVERNING.
 - remembered in history, any items acquired may be lost
 
 TREASURE:
+Treasure is a special "activity" where a notable generates a flat sum of gold,
+and possibly a rare item, to be added to the settlement. It takes place on the
+first timestep after a notable returns from ADVENTURING. The amount earned
+depends on the notable's level. After the treasure activity occurs, notables
+return to being HEALTHY.
 - contribute flat gold and/or an item
 - revert to HEALTHY
 
