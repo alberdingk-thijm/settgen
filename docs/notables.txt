@@ -32,6 +32,19 @@ their headquarters. In the second, a flat sum of gold can be paid to invite a
 notable to join the settlement instantly. The more buildings there are in a
 settlement, the more powerful the invited notable will be.
 
+Notable bonuses:
+The quarters and buildings in a settlement can have an effect on the notables
+produced. New notables via events will be of the same race as the quarter they
+appear in, and their starting level may be increased depending on the
+buildings in the quarter. Additionally, new notables via events will also
+receive bonuses based on the quarters found in the settlement: the more
+ADMINISTRATIVE buildings there are in a settlement, the larger the GOVERNING
+activity bonus; more RESIDENTIAL buildings reduces the risk of a notable
+becoming SICK; and more INDUSTRIAL buildings increases the amount of gold a
+TRADING or ADVENTURING notable can generate. Furthermore, existing notables
+can gain these bonuses slowly over time once the buildings are built, thereby
+ensuring that invited notables can becoming stronger as well.
+
 Maximum Notables:
 A settlement can never have more notables than 10% of its total population.
 Once this threshold is reached, building events which generate notables will
@@ -62,7 +75,6 @@ suscepitible to becoming SICK or DEAD.
 - contribute to growth and build speed
 - contribute gold
 - chance of SICK (grows with age) or DEAD
-(to consider: chance of mercantile expedition?)
 
 GOVERNING:
 Governing notables contribute more to growth and build speed than HEALTHY or
